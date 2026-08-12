@@ -33,6 +33,7 @@ A few things in the current build are placeholders and need real content before 
 
 - **Lead form submission** — ✅ wired up to Formspree (`https://formspree.io/f/xbgrokjg`). Submissions are sent via AJAX and land in your Formspree inbox / forward to whatever email you connected there. Test it once live to confirm.
 - **Video links** — the "Watch Success Stories" video currently streams from Dropbox share links, which aren't reliable for production. Move both files to a proper host (YouTube unlisted, Vimeo, or a CDN like Cloudflare Stream/Bunny.net).
+- **Social share image** — `og-image.jpg` (included in this folder) needs to be uploaded to GitHub alongside `index.html`, sitting at the root of the repo. This is what shows up as the preview image when the site link is shared on LinkedIn, Facebook, WhatsApp, etc. It must live at exactly `https://valenteconsulting.co.uk/og-image.jpg` for the meta tags in `index.html` to find it.
 - **Footer details** — phone number, website link, and social icons are placeholders (search for `href="#"` in the footer section).
 - **Testimonials** — three of the four reviews shown are real (Brandon Harper, Project Abundance, Derren Miller-Price); double-check none of the surrounding copy needs updating as new reviews come in.
 
