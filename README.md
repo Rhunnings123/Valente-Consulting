@@ -1,10 +1,28 @@
 # Valente Consulting Website
 
-A single self-contained static site (`index.html`) — no build step, no dependencies, all images embedded directly in the file. This makes deployment as simple as possible.
+A static site — `index.html` plus a small set of supporting files. As of this update, images are now
+separate optimized files in the `img/` folder rather than embedded directly in the HTML, which cut the
+page weight from ~1.5MB down to under 100KB for the HTML itself (images load separately, in parallel,
+and get cached by the browser).
+
+## Files in this folder
+
+```
+index.html              — the site itself
+img/                     — all site images (logo, hero photo, founder photo, favicons)
+og-image.jpg             — social share preview image (must stay at the repo root, not inside img/)
+privacy-policy.html
+terms-conditions.html
+robots.txt
+sitemap.xml
+404.html
+```
 
 ## Deploy via GitHub + Vercel
 
 ### 1. Push this folder to GitHub
+
+If this is your first upload, use git:
 
 ```bash
 cd path/to/this/folder
@@ -16,7 +34,12 @@ git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git
 git push -u origin main
 ```
 
-(Create the empty repo on GitHub first at github.com/new, then use the URL it gives you in place of the one above.)
+**If you're updating an existing repo via GitHub's web upload** (the method used so far in this
+project): go to your repo → "Add file" → "Upload files" → drag in the *entire* `img` folder along with
+all the other files at once. GitHub's uploader preserves folder structure when you drag a folder in, so
+the images will land correctly at `img/logo.png` etc. rather than loose in the repo root. Delete any old
+version of these files first if they already exist, to avoid the duplicate-filename renaming issue
+(`index_2.html` etc.) that came up earlier in this project.
 
 ### 2. Import into Vercel
 
@@ -48,7 +71,7 @@ A few things in the current build are placeholders and need real content before 
 
 - **Footer contact details** — the phone number, email, and "Premium Venue" location in the footer are still placeholders. Real ones should go in before launch.
 - **Analytics** — no GA4 or Meta Pixel installed yet. Set up an account and send me the tracking ID and I'll wire it in.
-- **Page weight** — the site is ~1.5MB as a single file because every image is embedded directly rather than hosted separately. Fine for testing, but worth optimizing (separate compressed image files) before real traffic hits it.
+- **Google Search Console** — `index.html` has a commented-out verification tag ready to go. Create a free account at [search.google.com/search-console](https://search.google.com/search-console), add your domain as a property, and it'll give you a verification code — send it to me (or uncomment the tag yourself and paste the code in) and submit `sitemap.xml` once verified.
 - **Cookie banner accuracy** — I added a generic banner assuming Superchat/Formspree set cookies, which is a reasonable assumption for a live chat + form tool, but worth confirming against their actual privacy documentation.
 - **Footer details** — phone number, website link, and social icons are placeholders (search for `href="#"` in the footer section).
 - **Testimonials** — three of the four reviews shown are real (Brandon Harper, Project Abundance, Derren Miller-Price); double-check none of the surrounding copy needs updating as new reviews come in.
