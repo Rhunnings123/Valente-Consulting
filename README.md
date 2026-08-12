@@ -35,6 +35,21 @@ A few things in the current build are placeholders and need real content before 
 - **Video links** — the "Watch Success Stories" video currently streams from Dropbox share links, which aren't reliable for production. Move both files to a proper host (YouTube unlisted, Vimeo, or a CDN like Cloudflare Stream/Bunny.net).
 - **Social share image** — `og-image.jpg` (included in this folder) needs to be uploaded to GitHub alongside `index.html`, sitting at the root of the repo. This is what shows up as the preview image when the site link is shared on LinkedIn, Facebook, WhatsApp, etc. It must live at exactly `https://valenteconsulting.co.uk/og-image.jpg` for the meta tags in `index.html` to find it.
 - **Privacy Policy & Terms and Conditions** — `privacy-policy.html` and `terms-conditions.html` are included and linked from the footer. These are **starting templates, not finished legal documents** — every `[bracketed placeholder]` (company number, registered address, contact details, actual cancellation/payment terms) needs to be filled in with real information, and a solicitor should review both pages in full before launch. The Terms page in particular was deliberately rewritten from scratch to match a one-day workshop offer — don't copy in terms from any other business without checking they actually match what you're selling.
+
+## What's now included (this update)
+
+- **`robots.txt`** and **`sitemap.xml`** — basic SEO hygiene, tells search engines how to crawl the site and lists all 3 real pages
+- **`404.html`** — a branded not-found page instead of Vercel's generic default. Upload it to the repo root; Vercel automatically serves it for broken links
+- **Structured data** (JSON-LD) in `index.html` — helps search engines understand the business. Deliberately kept conservative: only real, verifiable facts (name, founder, description). No fake ratings, address, or phone number included, since those aren't confirmed yet
+- **Consent checkbox** added to the application form — required, links to the Privacy Policy
+- **Cookie consent banner** — appears once per visitor (remembers dismissal), since the Superchat and Formspree widgets likely set cookies
+
+## Still outstanding (needs your input)
+
+- **Footer contact details** — the phone number, email, and "Premium Venue" location in the footer are still placeholders. Real ones should go in before launch.
+- **Analytics** — no GA4 or Meta Pixel installed yet. Set up an account and send me the tracking ID and I'll wire it in.
+- **Page weight** — the site is ~1.5MB as a single file because every image is embedded directly rather than hosted separately. Fine for testing, but worth optimizing (separate compressed image files) before real traffic hits it.
+- **Cookie banner accuracy** — I added a generic banner assuming Superchat/Formspree set cookies, which is a reasonable assumption for a live chat + form tool, but worth confirming against their actual privacy documentation.
 - **Footer details** — phone number, website link, and social icons are placeholders (search for `href="#"` in the footer section).
 - **Testimonials** — three of the four reviews shown are real (Brandon Harper, Project Abundance, Derren Miller-Price); double-check none of the surrounding copy needs updating as new reviews come in.
 
