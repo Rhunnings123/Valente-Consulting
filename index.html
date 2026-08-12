@@ -130,18 +130,13 @@
     display:block;font-style:normal;font-weight:400;
     color:var(--gold-deep);
   }
-  .hero p.lede{
-    margin-top:26px;max-width:460px;font-size:16px;color:var(--ink-soft);
+  .hero .lede{
+    margin-top:26px;max-width:460px;font-size:16px;line-height:1.65;color:var(--ink-soft);
+    min-height:190px;
+    transition:opacity .4s ease;
   }
-  .hero-rotator{
-    display:inline-block;position:relative;
-    font-weight:500;font-weight:700;color:var(--ink);
-  }
-  .hero-rotator-text{
-    display:inline-block;
-    transition:opacity .45s ease, transform .45s ease;
-  }
-  .hero-rotator-text.fade-out{opacity:0;transform:translateY(4px);}
+  .hero .lede.fade-out{opacity:0;}
+  .hero-rotator-inline{font-weight:700;color:var(--gold-deep);}
   .hero-credential{
     display:flex;align-items:center;gap:10px;margin-top:18px;
     font-size:12px;letter-spacing:0.04em;color:var(--ink-soft);
@@ -684,7 +679,8 @@
   .hero-copy{max-width:600px;padding:70px 0;}
   .hero-kicker{margin-bottom:26px;}
   .hero h1{font-size:clamp(32px,4vw,54px);line-height:1.08;}
-  .hero p.lede{margin-top:30px;max-width:560px;font-size:16.5px;line-height:1.6;}
+  .hero .lede{max-width:560px;font-size:16.5px;line-height:1.6;min-height:150px;}
+  .hero-rotator{font-size:16.5px;}
   .hero-credential{margin-top:22px;}
   .hero-ctas{margin-top:34px;}
   .mobile-cta-bar{display:none;}
@@ -725,12 +721,12 @@
   .hero-media{animation:heroPhotoIn 1.3s cubic-bezier(.16,1,.3,1) both;}
   .hero-kicker{opacity:0;animation:heroRise .8s cubic-bezier(.16,1,.3,1) .15s both;}
   .hero h1{opacity:0;animation:heroRise .8s cubic-bezier(.16,1,.3,1) .30s both;}
-  .hero p.lede{opacity:0;animation:heroRise .8s cubic-bezier(.16,1,.3,1) .46s both;}
-  .hero-credential{opacity:0;animation:heroRise .8s cubic-bezier(.16,1,.3,1) .60s both;}
-  .hero-ctas{opacity:0;animation:heroRise .8s cubic-bezier(.16,1,.3,1) .72s both;}
+  .hero .lede{opacity:0;animation:heroRise .8s cubic-bezier(.16,1,.3,1) .46s both;}
+  .hero-credential{opacity:0;animation:heroRise .8s cubic-bezier(.16,1,.3,1) .68s both;}
+  .hero-ctas{opacity:0;animation:heroRise .8s cubic-bezier(.16,1,.3,1) .78s both;}
   .hero-photo-caption{opacity:0;animation:heroCaptionIn .8s cubic-bezier(.16,1,.3,1) 1.0s both;}
   @media (prefers-reduced-motion:reduce){
-    .hero-media, .hero-kicker, .hero h1, .hero p.lede, .hero-credential, .hero-ctas, .hero-photo-caption{
+    .hero-media, .hero-kicker, .hero h1, .hero .lede, .hero-credential, .hero-ctas, .hero-photo-caption{
       animation:none !important;opacity:1 !important;transform:none !important;
     }
   }
@@ -836,7 +832,7 @@
     <div class="hero-copy">
       <p class="eyebrow hero-kicker">For £100k+ Business Owners</p>
       <h1>Built a<br>successful business.<span class="accent">Still working<br>like staff?</span></h1>
-      <p class="lede">You built a successful business. <span class="hero-rotator" aria-live="polite"><span class="hero-rotator-text">Now it owns you.</span></span> One day gives you the exact blueprint to fire yourself from the day-to-day, protect your profit, and build a company that runs and scales without you.</p>
+      <p class="lede" id="heroLede">You built a successful business. <span class="hero-rotator-inline">Now it owns you.</span> One day gives you the exact blueprint to fire yourself from the day-to-day, protect your profit, and build a company that runs and scales without you.</p>
       <p class="hero-credential">Winner, BBC's <em>The Apprentice</em>, 2015</p>
       <p class="hero-trust"><span class="trust-tick">✓</span> Trusted by 10,000+ UK business owners</p>
       <div class="hero-ctas">
@@ -1439,10 +1435,10 @@
     statEls.forEach(el=>counterIO.observe(el));
   }
 
-  // Hero message rotator — cycles through the core pain angles
+  // Hero message rotator — fades the whole paragraph as one unit
   (function(){
-    const textEl = document.querySelector('.hero-rotator-text');
-    if(!textEl) return;
+    const lede = document.getElementById('heroLede');
+    if(!lede) return;
     const phrases = [
       "Now it owns you.",
       "Now you can't take a real holiday.",
@@ -1454,12 +1450,12 @@
     if(prefersReduced || phrases.length < 2) return;
     let i = 0;
     setInterval(()=>{
-      textEl.classList.add('fade-out');
+      lede.classList.add('fade-out');
       setTimeout(()=>{
         i = (i + 1) % phrases.length;
-        textEl.textContent = phrases[i];
-        textEl.classList.remove('fade-out');
-      }, 450);
+        lede.innerHTML = 'You built a successful business. <span class="hero-rotator-inline">' + phrases[i] + '</span> One day gives you the exact blueprint to fire yourself from the day-to-day, protect your profit, and build a company that runs and scales without you.';
+        lede.classList.remove('fade-out');
+      }, 400);
     }, 5500);
   })();
 </script>
