@@ -16,6 +16,9 @@ terms-conditions.html
 robots.txt
 sitemap.xml
 404.html
+blog.html                — blog listing page, linked from the main nav
+blog-impact-of-mentorship.html
+blog-risks-of-standing-still.html
 ```
 
 ## Deploy via GitHub + Vercel
