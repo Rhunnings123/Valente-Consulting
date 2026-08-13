@@ -19,6 +19,8 @@ sitemap.xml
 blog.html                — blog listing page, linked from the main nav
 blog-impact-of-mentorship.html
 blog-risks-of-standing-still.html
+blog-why-businesses-plateau.html
+blog-busy-vs-profitable.html
 ```
 
 ## Deploy via GitHub + Vercel

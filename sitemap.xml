@@ -21,6 +21,16 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://valenteconsulting.co.uk/blog-why-businesses-plateau.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://valenteconsulting.co.uk/blog-busy-vs-profitable.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://valenteconsulting.co.uk/privacy-policy.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
