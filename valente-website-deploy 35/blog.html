@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Valente Consulting</title>
+<meta name="description" content="Straight-talking insights on growth, mentorship and building a business that doesn't depend on you, from Valente Consulting.">
+<link rel="canonical" href="https://valenteconsulting.co.uk/blog.html">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12110F; --ink-soft:#2b2823; --paper:#F7F4EC; --paper-2:#EFEADC;
+    --brass:#C99A1E; --brass-light:#EEC23C; --gold:#EEC23C; --gold-deep:#C99A1E;
+    --line:rgba(18,17,15,0.13); --max:960px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink-soft);line-height:1.7;font-size:16px;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  h1,h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;color:var(--ink);letter-spacing:0.02em;}
+  a{color:var(--gold-deep);text-decoration:none;}
+  .eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--brass);}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--brass);display:inline-block;}
+
+  .blog-hero{padding:64px 0 48px;text-align:center;}
+  .blog-hero h1{font-size:clamp(32px,4.5vw,52px);margin-top:16px;}
+  .blog-hero p{max-width:560px;margin:18px auto 0;font-size:16px;color:var(--ink-soft);}
+
+  .post-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding-bottom:90px;}
+  .post-card{
+    background:#fff;border:1px solid var(--line);padding:32px;
+    display:flex;flex-direction:column;transition:border-color .2s ease;
+  }
+  .post-card:hover{border-color:var(--brass-light);}
+  .post-card .tag{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--brass);}
+  .post-card h2{font-size:24px;margin-top:12px;line-height:1.15;}
+  .post-card p{font-size:14.5px;color:var(--ink-soft);margin-top:14px;flex-grow:1;}
+  .post-card .read-more{
+    display:inline-flex;align-items:center;gap:8px;margin-top:22px;
+    font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.03em;color:var(--ink);
+  }
+  .post-card .read-more:hover{color:var(--gold-deep);}
+
+  footer{border-top:1px solid var(--line);padding:32px 0;text-align:center;font-size:13px;color:var(--ink-soft);}
+
+  @media(max-width:700px){
+    .post-grid{grid-template-columns:1fr;}
+    header .actions .back{display:none;}
+    .blog-hero{padding:44px 0 36px;}
+  }
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  header .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    height:148px;max-width:1400px;
+  }
+  .brand img{height:120px;width:auto;}
+  nav{display:flex;gap:38px;}
+  nav a{
+    font-size:12.5px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;
+    color:var(--ink-soft);text-decoration:none;
+  }
+  nav a:hover{color:var(--brass);}
+  .header-cta{display:flex;align-items:center;gap:16px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;text-transform:uppercase;
+    letter-spacing:0.03em;text-decoration:none;padding:15px 24px;border:1px solid var(--gold);
+  }
+  .btn-primary{background:var(--gold);color:var(--ink);}
+  .btn-primary:hover{background:transparent;color:var(--gold-deep);}
+  .burger{
+    display:none;background:none;border:1px solid var(--line);border-radius:6px;
+    padding:9px;cursor:pointer;color:var(--ink);align-items:center;justify-content:center;
+  }
+  .mobile-nav{display:none;}
+
+  @media (max-width:980px){
+    header .wrap{height:88px;}
+    .brand img{height:60px;}
+    nav{display:none;}
+    .header-cta a.btn-primary{display:none;}
+    .burger{display:flex;}
+    .mobile-nav{
+      display:flex;
+      position:fixed;top:88px;left:0;right:0;z-index:60;
+      background:var(--paper);border-bottom:1px solid var(--line);
+      flex-direction:column;
+      max-height:0;overflow:hidden;
+      transition:max-height .3s ease;
+    }
+    .mobile-nav.open{max-height:340px;}
+    .mobile-nav a{
+      padding:16px 24px;font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;
+      color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);
+    }
+  }
+  @media (max-width:560px){
+    header .wrap{height:72px;padding:0 22px;}
+    .mobile-nav{top:72px;}
+    .brand img{height:44px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="index.html" class="brand" aria-label="Home">
+      <img src="img/logo.png" alt="Valente Consulting logo">
+    </a>
+    <nav>
+      <a href="index.html#fit">Is This You?</a>
+      <a href="index.html#about">About Us</a>
+      <a href="index.html#growth">The Blueprint</a>
+      <a href="index.html#stories">Success Stories</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+    <div class="header-cta">
+      <a href="index.html#reserve" class="btn btn-primary"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg> <span class="btn-label">Start Your Application</span></a>
+      <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html#fit">Is This You?</a>
+    <a href="index.html#about">About Us</a>
+    <a href="index.html#growth">The Blueprint</a>
+    <a href="index.html#stories">Success Stories</a>
+    <a href="blog.html">Blog</a>
+  </div>
+</header>
+
+<div class="blog-hero">
+  <div class="wrap">
+    <p class="eyebrow" style="justify-content:center;">Insights</p>
+    <h1>The Blog</h1>
+    <p>There's a ceiling to what hard work alone can build. These are the ideas, lessons and shifts in thinking that help you break through it, and build a business that finally works without you holding it up.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="post-grid">
+
+    <a class="post-card" href="blog-impact-of-mentorship.html" style="color:inherit;">
+      <span class="tag">Mentorship</span>
+      <h2>The Impact of Mentorship in Business</h2>
+      <p>Mentorship is not motivation. Here's what a good mentor actually changes in a business, what it costs to learn the hard way, and how to choose the right one.</p>
+      <span class="read-more">Read Article &rarr;</span>
+    </a>
+
+    <a class="post-card" href="blog-risks-of-standing-still.html" style="color:inherit;">
+      <span class="tag">Growth</span>
+      <h2>The Risks of Standing Still</h2>
+      <p>Standing still is not a neutral position in business. Here's what really happens when a company stops growing, and how to tell stagnation apart from stability.</p>
+      <span class="read-more">Read Article &rarr;</span>
+    </a>
+
+    <a class="post-card" href="blog-why-businesses-plateau.html" style="color:inherit;">
+      <span class="tag">Growth</span>
+      <h2>Why Most Small Businesses Plateau at the Same Point</h2>
+      <p>Most businesses stall at the same places and for the same reasons. Here's why growth stops, why the usual fixes make it worse, and what actually moves it.</p>
+      <span class="read-more">Read Article &rarr;</span>
+    </a>
+
+    <a class="post-card" href="blog-busy-vs-profitable.html" style="color:inherit;">
+      <span class="tag">Profit</span>
+      <h2>The Difference Between Busy and Profitable</h2>
+      <p>A full diary and a profitable business are not the same thing. Here's why busy businesses stay poor, and what the difference actually looks like in the numbers.</p>
+      <span class="read-more">Read Article &rarr;</span>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  &copy; <span id="year"></span> Valente Consulting. All rights reserved. &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="terms-conditions.html">Terms &amp; Conditions</a>
+</footer>
+
+<script>
+  (function(){
+    const btn = document.getElementById('burgerBtn');
+    const nav = document.getElementById('mobileNav');
+    if(!btn || !nav) return;
+    btn.addEventListener('click', ()=>{
+      const isOpen = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    nav.querySelectorAll('a').forEach(link=>{
+      link.addEventListener('click', ()=>{
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms &amp; Conditions | Valente Consulting</title>
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://valenteconsulting.co.uk/terms-conditions.html">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12110F; --ink-soft:#2b2823; --paper:#F7F4EC; --paper-2:#EFEADC;
+    --brass:#C99A1E; --brass-light:#EEC23C; --gold:#EEC23C; --gold-deep:#C99A1E;
+    --line:rgba(18,17,15,0.13); --max:900px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink-soft);line-height:1.7;font-size:16px;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  h1,h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;color:var(--ink);letter-spacing:0.02em;}
+  a{color:var(--gold-deep);}
+  main{padding:60px 0 80px;}
+  h1{font-size:clamp(30px,4vw,44px);margin-bottom:10px;}
+  .updated{font-size:13px;color:var(--ink-soft);margin-bottom:40px;}
+  .notice{
+    background:var(--paper-2);border:1px solid var(--line);padding:20px 22px;
+    font-size:14px;margin-bottom:44px;
+  }
+  section{margin-bottom:36px;}
+  h2{font-size:20px;margin-bottom:14px;margin-top:0;}
+  p, li{font-size:15px;color:var(--ink-soft);margin-bottom:12px;}
+  ul{padding-left:22px;margin-bottom:12px;}
+  footer{border-top:1px solid var(--line);padding:32px 0;text-align:center;font-size:13px;color:var(--ink-soft);}
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  header .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    height:148px;max-width:1400px;
+  }
+  .brand img{height:120px;width:auto;}
+  nav{display:flex;gap:38px;}
+  nav a{
+    font-size:12.5px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;
+    color:var(--ink-soft);text-decoration:none;
+  }
+  nav a:hover{color:var(--brass);}
+  .header-cta{display:flex;align-items:center;gap:16px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;text-transform:uppercase;
+    letter-spacing:0.03em;text-decoration:none;padding:15px 24px;border:1px solid var(--gold);
+  }
+  .btn-primary{background:var(--gold);color:var(--ink);}
+  .btn-primary:hover{background:transparent;color:var(--gold-deep);}
+  .burger{
+    display:none;background:none;border:1px solid var(--line);border-radius:6px;
+    padding:9px;cursor:pointer;color:var(--ink);align-items:center;justify-content:center;
+  }
+  .mobile-nav{display:none;}
+
+  @media (max-width:980px){
+    header .wrap{height:88px;}
+    .brand img{height:60px;}
+    nav{display:none;}
+    .header-cta a.btn-primary{display:none;}
+    .burger{display:flex;}
+    .mobile-nav{
+      display:flex;
+      position:fixed;top:88px;left:0;right:0;z-index:60;
+      background:var(--paper);border-bottom:1px solid var(--line);
+      flex-direction:column;
+      max-height:0;overflow:hidden;
+      transition:max-height .3s ease;
+    }
+    .mobile-nav.open{max-height:340px;}
+    .mobile-nav a{
+      padding:16px 24px;font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;
+      color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);
+    }
+  }
+  @media (max-width:560px){
+    header .wrap{height:72px;padding:0 22px;}
+    .mobile-nav{top:72px;}
+    .brand img{height:44px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="index.html" class="brand" aria-label="Home">
+      <img src="img/logo.png" alt="Valente Consulting logo">
+    </a>
+    <nav>
+      <a href="index.html#fit">Is This You?</a>
+      <a href="index.html#about">About Us</a>
+      <a href="index.html#growth">The Blueprint</a>
+      <a href="index.html#stories">Success Stories</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+    <div class="header-cta">
+      <a href="index.html#reserve" class="btn btn-primary"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg> <span class="btn-label">Start Your Application</span></a>
+      <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html#fit">Is This You?</a>
+    <a href="index.html#about">About Us</a>
+    <a href="index.html#growth">The Blueprint</a>
+    <a href="index.html#stories">Success Stories</a>
+    <a href="blog.html">Blog</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Terms &amp; Conditions</h1>
+    <p class="updated">Last updated: 12 August 2026</p>
+
+    <div class="notice">
+      Company and contact details below are real (sourced from Companies House, company number 17128802).
+      This is still a starting template, deliberately kept simpler than a multi-year subscription contract
+      since that's not what's being sold here. Sections 4-5 (payment and cancellation) still need your
+      actual commercial terms filled in — a solicitor should review the whole page before it goes live.
+    </div>
+
+    <section>
+      <h2>1. About These Terms</h2>
+      <p>These Terms &amp; Conditions ("Terms") apply to your application for, and attendance at, the workshop and services offered by Valente Consulting Education Ltd, a company registered in England and Wales (company number 17128802) ("we", "us", "Valente Consulting"). By submitting an application through this website, you agree to be bound by these Terms.</p>
+    </section>
+
+    <section>
+      <h2>2. The Workshop</h2>
+      <p>Valente Consulting delivers a one-day workshop for established business owners, along with related guidance, materials and follow-up support as described on this website. Submitting an application does not guarantee a place — all applications are reviewed, and we will confirm your place directly with you before any payment is taken.</p>
+    </section>
+
+    <section>
+      <h2>3. Applications &amp; Booking</h2>
+      <p>When you submit the application form on this website, you're expressing interest in attending the workshop. A member of our team will contact you to discuss your business, confirm suitability, and — if it's a good fit — arrange payment and confirm your place.</p>
+    </section>
+
+    <section>
+      <h2>4. Payment</h2>
+      <p>[Describe your actual payment terms here — e.g. full payment required to secure a place, accepted payment methods, any deposit structure. The figures and structure will depend on your actual pricing, which isn't published on this site.]</p>
+    </section>
+
+    <section>
+      <h2>5. Cancellations &amp; Refunds</h2>
+      <p>If you booked as a consumer at a distance (e.g. online or by phone), you may have a legal right to cancel within 14 days of booking under the Consumer Contracts Regulations 2013, unless the workshop takes place within that 14-day window and you've asked us to begin providing the service sooner.</p>
+      <p>[Insert your specific cancellation policy here — e.g. notice period required for a refund, whether transfers to a future date are offered instead of refunds, and any non-refundable elements. This needs to reflect what you actually intend to offer.]</p>
+    </section>
+
+    <section>
+      <h2>6. Changes to the Workshop</h2>
+      <p>We may occasionally need to change the date, venue, or format of the workshop (for example, moving from in-person to virtual delivery). Where we do, we'll give you as much notice as reasonably possible and offer a suitable alternative date where needed.</p>
+    </section>
+
+    <section>
+      <h2>7. Conduct</h2>
+      <p>We expect respectful behaviour from all attendees. We reserve the right to refuse entry, or remove someone from the workshop, in cases of disruptive, abusive, or inappropriate conduct.</p>
+    </section>
+
+    <section>
+      <h2>8. Intellectual Property</h2>
+      <p>All materials, frameworks, slides and resources provided as part of the workshop remain the intellectual property of Valente Consulting and are provided for your personal business use only. They may not be copied, taught, resold or redistributed without our written permission.</p>
+    </section>
+
+    <section>
+      <h2>9. No Guaranteed Outcomes</h2>
+      <p>The workshop provides guidance, strategy and tools based on real business experience — but we cannot and do not guarantee any specific financial outcome, revenue increase, or business result. Your results depend on many factors outside our control, including how the guidance is applied in your own business.</p>
+    </section>
+
+    <section>
+      <h2>10. Limitation of Liability</h2>
+      <p>To the fullest extent permitted by law, Valente Consulting is not liable for any indirect or consequential loss, including loss of profits, business or data, arising from your attendance at the workshop or use of our materials. Nothing in these Terms limits our liability for death, personal injury caused by our negligence, or fraud, where such limitation is not permitted by law.</p>
+    </section>
+
+    <section>
+      <h2>11. Force Majeure</h2>
+      <p>Neither party is liable for delays or failure to perform obligations caused by events beyond their reasonable control (for example, extreme weather, transport disruption, or public health restrictions). Where such an event affects the workshop, we will aim to reschedule or offer a suitable alternative.</p>
+    </section>
+
+    <section>
+      <h2>12. Governing Law</h2>
+      <p>These Terms are governed by the law of England &amp; Wales, and any disputes will be subject to the exclusive jurisdiction of the courts of England &amp; Wales.</p>
+    </section>
+
+    <section>
+      <h2>13. Changes to These Terms</h2>
+      <p>We may update these Terms from time to time to reflect changes in our services or the law. Continued use of this website after an update constitutes acceptance of the revised Terms.</p>
+    </section>
+
+    <section>
+      <h2>14. Contact Us</h2>
+      <p>If you have any questions about these Terms, please contact us at:</p>
+      <p><a href="mailto:hello@valenteconsulting.com">hello@valenteconsulting.com</a><br><a href="tel:03300587100">0330 058 7100</a><br>Precision House, Bakewell Road, Peterborough, England, PE2 6XU</p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  &copy; <span id="year"></span> Valente Consulting. All rights reserved. &middot; <a href="privacy-policy.html">Privacy Policy</a>
+</footer>
+
+<script>
+  (function(){
+    const btn = document.getElementById('burgerBtn');
+    const nav = document.getElementById('mobileNav');
+    if(!btn || !nav) return;
+    btn.addEventListener('click', ()=>{
+      const isOpen = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    nav.querySelectorAll('a').forEach(link=>{
+      link.addEventListener('click', ()=>{
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
