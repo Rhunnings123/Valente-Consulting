@@ -11,7 +11,7 @@
   :root{
     --ink:#12110F; --ink-soft:#2b2823; --paper:#F7F4EC; --paper-2:#EFEADC;
     --brass:#C99A1E; --brass-light:#EEC23C; --gold:#EEC23C; --gold-deep:#C99A1E;
-    --line:rgba(18,17,15,0.13); --max:900px;
+    --line:rgba(18,17,15,0.13); --max:820px;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink-soft);line-height:1.7;font-size:16px;}
@@ -20,15 +20,24 @@
   a{color:var(--gold-deep);}
   main{padding:60px 0 80px;}
   h1{font-size:clamp(30px,4vw,44px);margin-bottom:10px;}
-  .updated{font-size:13px;color:var(--ink-soft);margin-bottom:40px;}
-  .notice{
+  .lede{font-size:15.5px;color:var(--ink-soft);margin-bottom:32px;}
+  .meta{
     background:var(--paper-2);border:1px solid var(--line);padding:20px 22px;
-    font-size:14px;margin-bottom:44px;
+    font-size:14px;margin-bottom:32px;
   }
-  section{margin-bottom:36px;}
-  h2{font-size:20px;margin-bottom:14px;margin-top:0;}
+  .meta p{margin:4px 0;color:var(--ink-soft);}
+  .part{
+    font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:0.05em;
+    color:var(--brass);font-size:15px;margin:56px 0 4px;padding-top:28px;border-top:2px solid var(--brass);
+  }
+  h2{font-size:19px;margin:32px 0 12px;padding-top:20px;border-top:1px solid var(--line);}
+  h2:first-of-type{border-top:none;padding-top:0;}
+  h3{font-size:15.5px;margin:22px 0 8px;color:var(--gold-deep);font-family:'Inter',sans-serif;font-weight:700;}
   p, li{font-size:15px;color:var(--ink-soft);margin-bottom:12px;}
-  ul{padding-left:22px;margin-bottom:12px;}
+  ul, ol{padding-left:22px;margin-bottom:12px;}
+  li{margin-bottom:6px;}
+  strong{color:var(--ink);font-weight:700;}
+  .foot{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-soft);}
   footer{border-top:1px solid var(--line);padding:32px 0;text-align:center;font-size:13px;color:var(--ink-soft);}
   header{
     position:sticky;top:0;z-index:50;
@@ -119,85 +128,272 @@
 
 <main>
   <div class="wrap">
-    <h1>Terms &amp; Conditions</h1>
-    <p class="updated">Last updated: 12 August 2026</p>
 
-    <section>
-      <h2>1. About These Terms</h2>
-      <p>These Terms &amp; Conditions ("Terms") apply to your application for, and attendance at, the workshop and services offered by Valente Consulting Education Ltd, a company registered in England and Wales (company number 17128802) ("we", "us", "Valente Consulting"). By submitting an application through this website, you agree to be bound by these Terms.</p>
-    </section>
 
-    <section>
-      <h2>2. The Workshop</h2>
-      <p>Valente Consulting delivers a one-day workshop for established business owners, along with related guidance, materials and follow-up support as described on this website. Submitting an application does not guarantee a place — all applications are reviewed, and we will confirm your place directly with you before any payment is taken.</p>
-    </section>
+<h1>Terms &amp; Conditions</h1>
+<p class="lede">Please read these Terms carefully. They set out the basis on which you may use our website and on which we supply our workshops, events, programmes and consultancy services.</p>
 
-    <section>
-      <h2>3. Applications &amp; Booking</h2>
-      <p>When you submit the application form on this website, you're expressing interest in attending the workshop. A member of our team will contact you to discuss your business, confirm suitability, and — if it's a good fit — arrange payment and confirm your place.</p>
-    </section>
+<div class="meta">
+  <p><strong>Valente Consulting Ltd</strong> ("Valente Consulting", "we", "us", "our")</p>
+  <p>Registered in England and Wales, company number <strong>17128802</strong></p>
+  <p>Registered office: Precision House, Bakewell Road, Peterborough, England, PE2 6XU</p>
+  <p>Email: hello@valenteconsulting.com &nbsp;|&nbsp; Tel: 0330 058 7100</p>
+</div>
 
-    <section>
-      <h2>4. Payment</h2>
-      <p>[Describe your actual payment terms here — e.g. full payment required to secure a place, accepted payment methods, any deposit structure. The figures and structure will depend on your actual pricing, which isn't published on this site.]</p>
-    </section>
+<p>These Terms &amp; Conditions ("<strong>Terms</strong>") are made up of two parts:</p>
+<ul>
+  <li><strong>Part A – Website Terms of Use</strong>, which apply to everyone who visits or uses valenteconsulting.co.uk (the "<strong>Website</strong>"); and</li>
+  <li><strong>Part B – Programme, Workshop &amp; Services Terms</strong>, which apply to every workshop, event, programme, membership and consultancy service we supply (together, the "<strong>Services</strong>").</li>
+</ul>
+<p>By using the Website you accept Part A. By signing an Order Form, booking a place, or paying an invoice or Initial Payment, you ("<strong>you</strong>", the "<strong>Client</strong>") accept Part A and Part B and agree to be bound by them.</p>
+<p>Valente Consulting is part of the same group of companies as Trade Mastermind Ltd (company number 10884870). Where you also hold a contract with Trade Mastermind Ltd or any other group company, that contract is separate and governed by its own terms.</p>
 
-    <section>
-      <h2>5. Cancellations &amp; Refunds</h2>
-      <p>If you booked as a consumer at a distance (e.g. online or by phone), you may have a legal right to cancel within 14 days of booking under the Consumer Contracts Regulations 2013, unless the workshop takes place within that 14-day window and you've asked us to begin providing the service sooner.</p>
-      <p>[Insert your specific cancellation policy here — e.g. notice period required for a refund, whether transfers to a future date are offered instead of refunds, and any non-refundable elements. This needs to reflect what you actually intend to offer.]</p>
-    </section>
+<p class="part">Part A — Website Terms of Use</p>
 
-    <section>
-      <h2>6. Changes to the Workshop</h2>
-      <p>We may occasionally need to change the date, venue, or format of the workshop (for example, moving from in-person to virtual delivery). Where we do, we'll give you as much notice as reasonably possible and offer a suitable alternative date where needed.</p>
-    </section>
+<h2>1. Acceptance of these Terms</h2>
+<p>1.1 By accessing, browsing or using the Website you confirm that you accept these Terms and agree to comply with them. If you do not agree, you must not use the Website.</p>
+<p>1.2 We may amend these Terms at any time in accordance with clause 33. The version published on the Website at the time you use it is the version that applies.</p>
 
-    <section>
-      <h2>7. Conduct</h2>
-      <p>We expect respectful behaviour from all attendees. We reserve the right to refuse entry, or remove someone from the workshop, in cases of disruptive, abusive, or inappropriate conduct.</p>
-    </section>
+<h2>2. Permitted use of the Website</h2>
+<p>2.1 The Website is made available free of charge and for general information about our business and Services only.</p>
+<p>2.2 You may view, download and print pages of the Website for your own internal business purposes.</p>
+<p>2.3 You must not:</p>
+<ul>
+  <li>use the Website in any way that is unlawful, fraudulent or harmful, or for any unlawful or fraudulent purpose;</li>
+  <li>copy, reproduce, republish, sell, rent, licence, teach, adapt or redistribute any part of the Website or its content, other than as permitted by clause 2.2;</li>
+  <li>systematically extract, scrape, mine or harvest data from the Website, including by automated means;</li>
+  <li>introduce any virus, trojan, worm, logic bomb or other material that is malicious or technologically harmful;</li>
+  <li>attempt to gain unauthorised access to the Website, the server on which it is stored, or any server, computer or database connected to it;</li>
+  <li>attack the Website by way of a denial-of-service attack or distributed denial-of-service attack; or</li>
+  <li>use the Website in a way that may damage, disable, overburden or impair it, or interfere with any other person's use of it.</li>
+</ul>
+<p>2.4 We may suspend, withdraw or restrict your access to all or any part of the Website without notice where we reasonably consider that you have breached these Terms. We may also report any breach of clause 2.3 to the relevant law enforcement authorities.</p>
 
-    <section>
-      <h2>8. Intellectual Property</h2>
-      <p>All materials, frameworks, slides and resources provided as part of the workshop remain the intellectual property of Valente Consulting and are provided for your personal business use only. They may not be copied, taught, resold or redistributed without our written permission.</p>
-    </section>
+<h2>3. Intellectual property in Website content</h2>
+<p>3.1 We are the owner or the licensee of all intellectual property rights in the Website and in the material published on it, including all text, graphics, images, video, audio, downloads, frameworks, tools, templates, methodologies and branding. Those works are protected by copyright, trade mark and other laws and treaties around the world. All such rights are reserved.</p>
+<p>3.2 "The Valente Blueprint™", "Valente Consulting" and our logos and other brand assets are our trade marks or those of our group. Nothing on the Website grants you any right or licence to use them.</p>
+<p>3.3 You must not modify any copies of materials you have taken from the Website, and you must not use any illustrations, photographs, video or audio sequences separately from any accompanying text. Our status as the author of content on the Website must always be acknowledged.</p>
 
-    <section>
-      <h2>9. No Guaranteed Outcomes</h2>
-      <p>The workshop provides guidance, strategy and tools based on real business experience — but we cannot and do not guarantee any specific financial outcome, revenue increase, or business result. Your results depend on many factors outside our control, including how the guidance is applied in your own business.</p>
-    </section>
+<h2>4. No advice — information only</h2>
+<p>4.1 Content on the Website, including blog articles, guides, downloads, podcasts, videos, case studies and assessment tools, is provided for general information only. It is not advice on which you should rely.</p>
+<p>4.2 Nothing on the Website constitutes, and nothing we provide should be treated as, legal, accounting, tax, financial, investment, regulatory, insurance or employment advice. You should obtain professional or specialist advice before taking, or refraining from, any action on the basis of Website content.</p>
+<p>4.3 Although we make reasonable efforts to keep the Website up to date, we make no representations, warranties or guarantees, whether express or implied, that the content on the Website is accurate, complete or current.</p>
 
-    <section>
-      <h2>10. Limitation of Liability</h2>
-      <p>To the fullest extent permitted by law, Valente Consulting is not liable for any indirect or consequential loss, including loss of profits, business or data, arising from your attendance at the workshop or use of our materials. Nothing in these Terms limits our liability for death, personal injury caused by our negligence, or fraud, where such limitation is not permitted by law.</p>
-    </section>
+<h2>5. Results, testimonials and case studies</h2>
+<p>5.1 Any figures, growth rates, turnover, profit, margin, timescale or other outcome referred to on the Website — including in testimonials, success stories, case studies, reviews and social media content — describe the experience of the individual businesses concerned. They are illustrative only and are not a promise, guarantee, projection or representation of the results you will achieve.</p>
+<p>5.2 Business results depend on many factors outside our control, including your market, your team, your capital, your execution, economic conditions and your own decisions. We do not guarantee any specific financial or commercial outcome. See also clause 24.</p>
 
-    <section>
-      <h2>11. Force Majeure</h2>
-      <p>Neither party is liable for delays or failure to perform obligations caused by events beyond their reasonable control (for example, extreme weather, transport disruption, or public health restrictions). Where such an event affects the workshop, we will aim to reschedule or offer a suitable alternative.</p>
-    </section>
+<h2>6. Links to and from the Website</h2>
+<p>6.1 Where the Website contains links to other sites, resources or platforms provided by third parties, those links are provided for your information only and do not signify our approval or endorsement. We have no control over the contents of those sites or resources and accept no responsibility for them or for any loss or damage that may arise from your use of them.</p>
+<p>6.2 You may link to our home page provided you do so in a way that is fair and legal, does not damage our reputation or take advantage of it, and does not suggest any form of association, approval or endorsement on our part where none exists. You must not frame the Website on any other site, and you must not link from any site that is not owned by you. We may withdraw linking permission at any time without notice.</p>
 
-    <section>
-      <h2>12. Governing Law</h2>
-      <p>These Terms are governed by the law of England &amp; Wales, and any disputes will be subject to the exclusive jurisdiction of the courts of England &amp; Wales.</p>
-    </section>
+<h2>7. Availability of the Website</h2>
+<p>7.1 We do not guarantee that the Website, or any content on it, will always be available, uninterrupted or error-free. Access is permitted on a temporary basis.</p>
+<p>7.2 We may suspend, withdraw, discontinue or change all or any part of the Website without notice. We will not be liable to you if the Website is unavailable at any time or for any period.</p>
+<p>7.3 You are responsible for ensuring that all persons who access the Website through your internet connection are aware of these Terms and comply with them, and for configuring your own information technology, computer programmes and platform to access the Website. You should use your own virus protection software.</p>
 
-    <section>
-      <h2>13. Changes to These Terms</h2>
-      <p>We may update these Terms from time to time to reflect changes in our services or the law. Continued use of this website after an update constitutes acceptance of the revised Terms.</p>
-    </section>
+<h2>8. Our liability for Website use</h2>
+<p>8.1 Nothing in these Terms excludes or limits our liability for death or personal injury arising from our negligence, for fraud or fraudulent misrepresentation, or for any other liability that cannot lawfully be excluded or limited under English law.</p>
+<p>8.2 Subject to clause 8.1, we exclude all conditions, warranties, representations and other terms which might otherwise be implied into these Terms in relation to the Website, and we will not be liable to you for any loss or damage, whether in contract, tort (including negligence), breach of statutory duty or otherwise, arising under or in connection with your use of, or inability to use, the Website, or your use of or reliance on any content displayed on it, including any:</p>
+<ul>
+  <li>loss of profits, sales, business, revenue, contracts or anticipated savings;</li>
+  <li>business interruption;</li>
+  <li>loss of goodwill or reputation;</li>
+  <li>loss or corruption of data or information; or</li>
+  <li>indirect, consequential, special or punitive loss.</li>
+</ul>
 
-    <section>
-      <h2>14. Contact Us</h2>
-      <p>If you have any questions about these Terms, please contact us at:</p>
-      <p><a href="mailto:hello@valenteconsulting.com">hello@valenteconsulting.com</a><br><a href="tel:03300587100">0330 058 7100</a><br>Precision House, Bakewell Road, Peterborough, England, PE2 6XU</p>
-    </section>
+<h2>9. Enquiries, personal data and cookies</h2>
+<p>9.1 When you complete an enquiry form, book a call, register for an event or download a resource, you consent to us contacting you about your enquiry and about our Services, by email, telephone, SMS and messaging platforms, until you tell us otherwise. You can opt out of marketing at any time using the unsubscribe link in any email or by contacting us using the details in clause 34.</p>
+<p>9.2 We process personal data in accordance with our <a href="/privacy-policy">Privacy Policy</a>, which is compliant with the UK GDPR and the Data Protection Act 2018 and forms part of these Terms.</p>
+<p>9.3 The Website uses cookies and similar technologies. Details of the cookies we use and how you can manage them are set out in our <a href="/privacy-policy">Privacy Policy</a> and cookie notice.</p>
+
+<p class="part">Part B — Programme, Workshop &amp; Services Terms</p>
+
+<h2>10. Application of Part B</h2>
+<p>10.1 Part B applies to all Services supplied by Valente Consulting, including the Discovery Workshop, VC Events, business health assessments, 90-day growth roadmaps, implementation support, ongoing accountability coaching, and any consultancy, mentoring, membership or advisory service we supply.</p>
+<p>10.2 The contract between us is formed of these Terms together with the Order Form, booking confirmation, proposal or invoice you sign or accept (the "<strong>Order Form</strong>"). Where the Order Form and these Terms conflict, these Terms prevail unless the Order Form expressly states otherwise and is signed by an authorised representative of Valente Consulting.</p>
+<p>10.3 You confirm that you are entering into the contract in the course of your business, trade, craft or profession and not as a consumer, and that you have authority to bind the business named on the Order Form.</p>
+
+<h2>11. Services and access</h2>
+<p>11.1 On enrolment and receipt of the initial payment set out on the Order Form (the "<strong>Initial Payment</strong>"), you receive access to the elements of your package, which may include:</p>
+<ul>
+  <li>the Discovery Workshop or other scheduled workshop days;</li>
+  <li>your business health assessment and 90-day growth roadmap;</li>
+  <li>digital materials, frameworks, tools, templates and models forming part of The Valente Blueprint™;</li>
+  <li>any online portal, member area or community made available to you;</li>
+  <li>attendance at VC Events and group sessions included in your package; and</li>
+  <li>the implementation support and accountability sessions specified on your Order Form.</li>
+</ul>
+<p>11.2 Access is personal to you and your named business and is non-transferable. It may not be shared with, resold to, or used for the benefit of any other business.</p>
+<p>11.3 We may update or modify the structure, content, format, venue, personnel or delivery method of the Services at any time in order to improve or maintain the experience, provided the overall nature of the Services is not materially reduced.</p>
+<p>11.4 The number of workshop days, sessions, calls or event places included in your package is as stated on your Order Form. Unused sessions, days or places do not roll over, carry forward or convert into a refund, credit or reduction in fees.</p>
+
+<h2>12. Contract length &amp; commitment</h2>
+<p>12.1 The contract term is selected on the Order Form. Unless the Order Form states otherwise, this is a <strong>fixed-term, fixed-value contract</strong>.</p>
+<p>12.2 You agree to pay the full contract value regardless of attendance, usage, engagement or results. Not attending sessions, workshops or events, and not using materials or support made available to you, does not reduce or cancel your payment obligations.</p>
+
+<h2>13. Fees &amp; payments</h2>
+<p>13.1 Fees are as set out on the Order Form and are exclusive of VAT, which will be added at the prevailing rate where applicable.</p>
+<p>13.2 Payments must be made by Direct Debit, recurring card payment, bank transfer or an approved finance provider, as specified on the Order Form.</p>
+<p>13.3 All payments, including the Initial Payment, are <strong>non-refundable</strong>, save where clause 21 applies or where a refund is required by law.</p>
+<p>13.4 You must ensure that cleared funds are available for each scheduled payment on its due date.</p>
+<p>13.5 We reserve the right to determine how payment is taken. Wherever possible, payment must be made in full upfront or via an approved finance provider. Instalment or monthly payment arrangements are not an entitlement, are offered entirely at our discretion, and may be withdrawn at any time prior to acceptance.</p>
+<p>13.6 Fees do not include your own travel, accommodation, subsistence, software, advertising spend or third-party costs, which are your responsibility unless expressly stated on the Order Form.</p>
+
+<h2>14. Finance providers</h2>
+<p>14.1 If you fund the Services through a finance provider, you must comply with that provider's terms.</p>
+<p>14.2 Cancelling, disputing or reversing payments with a finance provider does not cancel, suspend or vary this contract, and the full contract value remains payable to us.</p>
+<p>14.3 Where a finance arrangement is interrupted, declined or withdrawn, we may require you to pay the outstanding balance directly and may take appropriate steps to recover it.</p>
+<p>14.4 Any agreement with a finance provider is separate from, and does not replace, your obligations under this contract.</p>
+
+<h2>15. Overdue balances and payment support</h2>
+<p>15.1 We understand that delays can happen. If a payment is missed we will try to contact you and work with you to get things back on track. If any payment is more than 7 days overdue, reasonable late fees and interest may apply, and we will notify you in advance.</p>
+<p>15.2 If any payment is more than 30 days overdue, the remaining balance for the full contract term may become immediately payable. We will always discuss the available options with you first.</p>
+<p>15.3 Access to the Services, materials and any portal or community may be paused until payments are brought up to date. A pause under this clause does not extend the contract term or reduce the fees payable.</p>
+<p>15.4 <strong>Payment support plans.</strong> Where needed, we can explore temporary payment arrangements. Such plans are entirely discretionary; interest may apply on extended schedules; and no support arrangement reduces or cancels the total contract value. We aim to support every client who communicates with us proactively.</p>
+<p>15.5 We may recover all reasonable costs of collection, including legal and debt recovery costs, incurred as a result of your failure to pay on time.</p>
+
+<h2>16. Value delivery and allocation of the contract value</h2>
+<p>16.1 On enrolment you receive substantial value upfront, including your assessment, roadmap, digital assets, frameworks, portal and community access, onboarding and strategy materials. These elements represent the majority of the overall value of the Services.</p>
+<p>16.2 Valente Consulting allocates <strong>70% of the contract value to initial delivery and onboarding</strong>, with the remaining 30% attributable to ongoing sessions, events and support.</p>
+<p>16.3 Where fees are paid in instalments, those instalments exist for your convenience and do not reflect the timing of value delivery.</p>
+
+<h2>17. Delivery format, attendance and force majeure</h2>
+<p>17.1 <strong>Delivery format.</strong> We may deliver the Services through in-person sessions, live virtual sessions, online learning or digital resources. Where an in-person session is replaced with virtual delivery, that constitutes full and valid delivery of the Services.</p>
+<p>17.2 <strong>Attendance options.</strong> If you purchased an in-person programme you may attend either in person or virtually. If you purchased a virtual-only programme you may attend virtually only, unless an upgrade is purchased separately.</p>
+<p>17.3 <strong>Force majeure and continuity of service.</strong> Neither party is liable for any delay or failure to perform its obligations where that delay or failure results from events, circumstances or causes beyond its reasonable control, including acts of God, war, terrorism, civil unrest, industrial action, government restrictions, changes in law, public health emergencies, pandemics, epidemics, lockdowns, natural disasters, cyber attack, or failure of utilities, communications or transport networks (a "<strong>Force Majeure Event</strong>").</p>
+<p>17.4 Where a Force Majeure Event prevents or restricts delivery of any in-person Services, training, events or sessions, we reserve the right to continue delivery in an alternative format, including virtual delivery, online training, recorded sessions or access via our online platform, which operates as the default backup delivery method.</p>
+<p>17.5 For the avoidance of doubt, a Force Majeure Event does not relieve you of the obligation to pay fees due under this contract, and all payments remain due and payable in full and on time, regardless of whether delivery continues in person, virtually, online, or is temporarily disrupted. No Force Majeure Event constitutes grounds for suspension, reduction, withholding or cancellation of payments.</p>
+<p>17.6 <strong>Scheduling adjustments.</strong> We may adjust dates, venues, speakers, trainers or formats where reasonably required. Such adjustments do not give rise to cancellation or refund rights. Where you are unable to attend a rescheduled date, we will use reasonable endeavours to offer an alternative date or virtual attendance.</p>
+
+<h2>18. Your responsibilities</h2>
+<p>18.1 You are responsible for providing, promptly and accurately, all information, documents, financial data, access and approvals we reasonably request in order to deliver the Services.</p>
+<p>18.2 You remain solely responsible for the operation of your business and for every decision you take, including all commercial, financial, legal, tax, employment, health and safety and regulatory decisions. We provide guidance, frameworks and accountability; we do not manage, direct or control your business.</p>
+<p>18.3 You are responsible for obtaining independent professional advice before implementing any recommendation that has legal, tax, accounting, regulatory, insurance or employment implications.</p>
+<p>18.4 Delays caused by you, including late provision of information, feedback or approvals, may extend delivery timeframes. Such delays are not a breach by us and do not give rise to cancellation, refund or reduction of fees.</p>
+
+<h2>19. Conduct</h2>
+<p>19.1 Respectful, professional behaviour is required at all times, at workshops, at events, in online communities and groups, and in all communications with our team, our trainers and other clients.</p>
+<p>19.2 Disruptive, abusive, discriminatory, threatening or otherwise unacceptable behaviour may result in your access being paused or withdrawn and your contract terminated. No refunds apply in such cases and the full contract value remains payable.</p>
+<p>19.3 You must not use any workshop, event, community or group to solicit, sell to or market to other clients without our prior written consent.</p>
+<p>19.4 You must not record, stream, photograph or broadcast any session, workshop or event without our prior written consent. You consent to us photographing, recording and filming sessions and events for training, marketing and promotional purposes and to our use of your image, voice and business name in that material; you may object at any time by writing to us using the details in clause 34.</p>
+
+<h2>20. System rules</h2>
+<p>20.1 You must not share login details for any portal, member area, community or platform, and you must not misuse any system, tool or content.</p>
+<p>20.2 You are responsible for all activity carried out under your login credentials and must notify us immediately if you suspect any unauthorised use.</p>
+
+<h2>21. Cooling-off period and cancellation</h2>
+<p>21.1 You may cancel within <strong>7 days</strong> of signing the Order Form provided that you:</p>
+<ul>
+  <li>request cancellation in writing within those 7 days by emailing <a href="mailto:hello@valenteconsulting.com">hello@valenteconsulting.com</a>;</li>
+  <li>complete the mandatory exit questionnaire; and</li>
+  <li>attend the mandatory exit video interview.</li>
+</ul>
+<p>Failure to attend the exit interview voids the cancellation. After 7 days the contract becomes non-cancellable and the full contract value remains payable.</p>
+<p>21.2 <strong>Return of property as a condition of cancellation.</strong> As part of enrolment you may be issued with welcome packs, printed materials, branded items, documentation or other Valente Consulting property ("<strong>VC Property</strong>"). Where you seek to cancel, cancellation is not complete until all VC Property has been returned to us.</p>
+<p>21.3 All VC Property must be returned in full, within the timeframe we specify, and undamaged, unaltered and in reasonable condition (fair wear and tear excepted).</p>
+<p>21.4 We reserve the right to delay or withhold confirmation of cancellation, to suspend or delay any refund where applicable, and to continue collection of payments, until all VC Property has been received and inspected.</p>
+<p>21.5 Where VC Property is returned damaged, incomplete or altered, or is not returned at all, we may apply reasonable replacement or repair charges, which become immediately payable.</p>
+<p>21.6 Nothing in this clause 21 affects any statutory cancellation right you may have that cannot lawfully be excluded.</p>
+
+<h2>22. Intellectual property in the Services</h2>
+<p>22.1 All materials, frameworks, methodologies, assessments, roadmaps, templates, tools, recordings and resources supplied as part of the Services — including The Valente Blueprint™ and its eight pillars — remain our intellectual property or that of our licensors at all times.</p>
+<p>22.2 On payment of the Initial Payment we grant you a non-exclusive, non-transferable, revocable licence to use those materials solely for the internal purposes of the business named on the Order Form, for the duration of your contract.</p>
+<p>22.3 You must not copy, reproduce, record, teach, train from, publish, resell, sub-licence, distribute or otherwise exploit any of those materials, in whole or in part, whether or not for commercial gain.</p>
+<p>22.4 Where you submit work, case study material, data or content as part of the Services, you grant us a perpetual, royalty-free licence to use it for training, research, quality assurance, marketing and publication purposes, and to share it with external moderators or other third parties. We will reference you appropriately as the creator, save where anonymisation is necessary.</p>
+
+<h2>23. Confidentiality</h2>
+<p>23.1 Each party must keep confidential all non-public information about the other party's business, staff, clients, pricing, systems and operations, and must not disclose it to any third party without prior written consent, except where disclosure is required by law or by a regulator.</p>
+<p>23.2 Information shared by other clients in workshops, events, communities or group sessions is confidential and must not be repeated, published or used outside those sessions.</p>
+<p>23.3 This clause survives termination of the contract.</p>
+
+<h2>24. No guarantees and limitation of liability</h2>
+<p>24.1 We do not guarantee any specific financial, commercial or operational outcome, including turnover, profit, margin, valuation, lead volume, sales, growth rate, exit or timescale. Results depend on your market, your team and your execution.</p>
+<p>24.2 Nothing in these Terms excludes or limits our liability for death or personal injury caused by our negligence, for fraud or fraudulent misrepresentation, or for any other liability that cannot lawfully be excluded or limited under English law.</p>
+<p>24.3 Subject to clause 24.2, we are not liable, whether in contract, tort (including negligence), breach of statutory duty or otherwise, for any loss of profit, loss of revenue, loss of business or business opportunity, loss of contracts, loss of anticipated savings, loss of goodwill or reputation, loss or corruption of data, insolvency, or any indirect, consequential, special or punitive loss.</p>
+<p>24.4 Subject to clause 24.2, our total aggregate liability arising out of or in connection with the Services shall not exceed the total fees actually paid by you to us under the relevant contract in the 12 months preceding the event giving rise to the claim.</p>
+<p>24.5 We are not responsible for the acts, omissions, advice or content of any third-party speaker, trainer, partner, supplier, finance provider or platform introduced or used in connection with the Services.</p>
+
+<h2>25. Indemnity</h2>
+<p>25.1 You agree to indemnify and hold harmless Valente Consulting, its directors, officers, employees and contractors against any claims, losses, liabilities, damages, costs and expenses arising from:</p>
+<ul>
+  <li>(a) misuse of the Services, systems or materials;</li>
+  <li>(b) breach of these Terms;</li>
+  <li>(c) unauthorised use or disclosure of our intellectual property or confidential information; or</li>
+  <li>(d) unlawful or improper conduct by you, your staff or your representatives.</li>
+</ul>
+
+<h2>26. Termination</h2>
+<p>26.1 We may pause or terminate your access, and terminate this contract, on written notice if you:</p>
+<ul>
+  <li>fail to pay any sum when due;</li>
+  <li>breach these Terms;</li>
+  <li>misuse our intellectual property or confidential information;</li>
+  <li>behave abusively or in breach of clause 19; or</li>
+  <li>violate the system rules in clause 20.</li>
+</ul>
+<p>26.2 Termination under clause 26.1 does not cancel your obligation to pay the full contract value, which becomes immediately due and payable.</p>
+<p>26.3 Either party may terminate immediately on written notice if the other becomes insolvent, enters administration or liquidation, or ceases to carry on business.</p>
+
+<h2>27. Renewal and automatic roll-on</h2>
+<p>27.1 Where your Order Form specifies a rolling or renewable term, the contract will automatically renew for a further term of equal length unless cancelled in accordance with clause 27.2.</p>
+<p>27.2 To prevent automatic renewal, you must give written notice of cancellation during the eleventh (11th) or twelfth (12th) month of the then-current term, and in any event not less than thirty (30) days before the renewal date.</p>
+<p>27.3 Failure to give valid notice within that window will result in automatic enrolment into the next term, and all associated fees become due and payable. A cancellation request made outside the notice window will not prevent renewal and will take effect only at the end of the subsequent term.</p>
+<p>27.4 Where any membership, accreditation, community or support subscription continues after the end of your programme, it renews automatically on a rolling monthly basis, is collected using your existing payment method, and continues until cancelled by you in writing on not less than thirty (30) days' notice.</p>
+<p>27.5 We will notify you before the start of any renewal term of the fees that will apply. We may vary renewal fees by giving you not less than thirty (30) days' written notice before the renewal date.</p>
+
+<h2>28. Access and materials on exit</h2>
+<p>28.1 On completion, expiry or termination of this contract, access to all Valente Consulting systems, platforms, communities, materials and Services ceases immediately unless otherwise agreed in writing.</p>
+<p>28.2 No ongoing access, duplication, export or continued use of our intellectual property is permitted following termination, save where expressly authorised by us in writing.</p>
+<p>28.3 You are responsible for keeping your own copies of your business data, notes and records. We are under no obligation to retain or return data beyond any period required by law.</p>
+
+<h2>29. Complaints</h2>
+<p>29.1 If you are unhappy with any aspect of the Services, please tell us as soon as possible by emailing <a href="mailto:hello@valenteconsulting.com">hello@valenteconsulting.com</a> so that we have the opportunity to put things right.</p>
+<p>29.2 We will acknowledge your complaint within 5 business days and aim to provide a substantive response within 20 business days.</p>
+
+<h2>30. Entire agreement, hierarchy and enforcement</h2>
+<p>30.1 These Terms, together with the Order Form and the Privacy Policy, constitute the entire agreement between the parties and supersede all prior discussions, representations, proposals or understandings, whether written or oral.</p>
+<p>30.2 In the event of any inconsistency between sales materials, marketing content, verbal representations, order forms, price schedules or summaries, these Terms prevail.</p>
+<p>30.3 You acknowledge that you have not relied on any statement, promise or representation that is not set out in these Terms or the Order Form.</p>
+<p>30.4 All automatic renewals, subscriptions and ongoing fees authorised under this contract constitute your express consent to recurring payments.</p>
+<p>30.5 No variation or amendment of this contract is valid unless agreed in writing by an authorised representative of Valente Consulting Ltd.</p>
+
+<h2>31. General</h2>
+<p>31.1 We may assign, transfer, subcontract or novate this contract, in whole or in part, including to another company within our group. You may not assign or transfer it without our prior written consent.</p>
+<p>31.2 Notices sent by email to the addresses given on the Order Form are deemed delivered on the day of sending, unless sent outside business hours, in which case they are deemed delivered on the next business day.</p>
+<p>31.3 No failure or delay by either party in exercising any right or remedy constitutes a waiver of that or any other right or remedy.</p>
+<p>31.4 Each of the provisions of these Terms operates separately. If a court or competent authority finds any provision unlawful or unenforceable, it shall be deemed modified to the minimum extent necessary or, if that is not possible, deleted, and the remaining provisions will continue in full force and effect.</p>
+<p>31.5 Nothing in these Terms creates a partnership, joint venture, agency or employment relationship between the parties.</p>
+<p>31.6 A person who is not a party to this contract has no right under the Contracts (Rights of Third Parties) Act 1999 to enforce any of its terms.</p>
+<p>31.7 These Terms and any dispute or claim arising out of or in connection with them, their subject matter or formation (including non-contractual disputes or claims) are governed by and construed in accordance with the law of England and Wales.</p>
+<p>31.8 The courts of England and Wales have exclusive jurisdiction to settle any such dispute or claim.</p>
+
+<h2>32. Privacy</h2>
+<p>32.1 We process personal data at all times in accordance with our <a href="/privacy-policy">Privacy Policy</a>, which is available on the Website or on request, and which complies with the UK GDPR and the Data Protection Act 2018.</p>
+<p>32.2 Where either party processes personal data on behalf of the other in connection with the Services, the parties will comply with their respective obligations under applicable data protection law and will enter into a data processing agreement where required.</p>
+
+<h2>33. Changes to these Terms</h2>
+<p>33.1 We may amend these Terms from time to time where reasonably necessary to reflect changes in law, regulation, business operations, payment processes or the Services provided.</p>
+<p>33.2 Any material change will be notified to you before it takes effect. Continued use of the Website or the Services after the effective date of the amended Terms constitutes acceptance of those amendments, except where prohibited by applicable law.</p>
+
+<h2>34. Contacting us</h2>
+<p>To contact us, please write to:</p>
+<p><strong>Valente Consulting Ltd</strong><br>
+Precision House, Bakewell Road<br>
+Peterborough, PE2 6XU<br>
+Tel: 0330 058 7100<br>
+Email: <a href="mailto:hello@valenteconsulting.com">hello@valenteconsulting.com</a></p>
+
+<p class="foot">Valid from: 08 September 2026<br>
+Last updated: 08 September 2026</p>
+
+
   </div>
 </main>
 
 <footer>
-  &copy; <span id="year"></span> Valente Consulting. All rights reserved. &middot; <a href="privacy-policy.html">Privacy Policy</a>
+  &copy; <span id="year"></span> Valente Consulting. All rights reserved.
 </footer>
 
 <script>
