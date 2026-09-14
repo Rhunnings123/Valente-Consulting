@@ -28,15 +28,25 @@
   .page-head p{max-width:560px;margin:16px auto 0;color:var(--ink-soft);font-size:16px;}
 
   .press-list{margin-top:8px;}
-  .press-item{display:flex;gap:24px;padding:28px 0;border-bottom:1px solid var(--line);align-items:flex-start;}
+  .press-item{display:flex;gap:20px;padding:26px 0;border-bottom:1px solid var(--line);align-items:flex-start;}
   .press-item:last-child{border-bottom:none;}
-  .press-tag{
-    flex-shrink:0;width:120px;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
-    color:var(--brass);padding-top:4px;
-  }
-  .press-item h2{font-size:18px;margin-bottom:6px;}
+  .press-item h2{font-size:17px;margin-bottom:6px;font-family:'Inter',sans-serif;text-transform:none;letter-spacing:0;font-weight:700;color:var(--ink);}
+  .press-item h2 a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--brass-dim,var(--brass));}
+  .press-item h2 a:hover{color:var(--gold-deep);}
   .press-item p{font-size:14.5px;color:var(--ink-soft);}
-  .press-item-thumb{width:44px;height:44px;object-fit:cover;border-radius:6px;flex-shrink:0;margin-top:2px;}
+
+  .press-icon{
+    width:52px;height:52px;border-radius:10px;flex-shrink:0;margin-top:2px;
+    background:#fff;border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;overflow:hidden;
+  }
+  .press-icon img{max-width:100%;max-height:100%;object-fit:contain;padding:9px;}
+  .press-icon.cover img{width:100%;height:100%;object-fit:cover;padding:0;}
+  .press-icon.dark{background:var(--ink);}
+  .press-icon.label{
+    background:var(--ink);color:var(--gold);font-family:'Anton',sans-serif;
+    font-size:13px;letter-spacing:0.02em;text-transform:uppercase;
+  }
 
   .as-seen-in{margin:0 0 56px;padding:32px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .as-seen-in-label{text-align:center;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:26px;}
@@ -103,8 +113,8 @@
     }
     .mobile-nav.open{max-height:380px;}
     .mobile-nav a{padding:16px 24px;font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);}
-    .press-item{flex-direction:column;gap:6px;}
-    .press-tag{width:auto;}
+    .press-item{gap:16px;}
+    .press-icon{width:44px;height:44px;}
     .logo-strip{gap:28px;}
     .book-feature{flex-direction:column;text-align:center;padding:28px;}
   }
@@ -166,49 +176,56 @@
 
     <div class="press-list">
       <div class="press-item">
-        <div class="press-tag">TV</div>
+        <div class="press-icon"><img src="img/logo-bbc.png" alt="BBC"></div>
         <div>
-          <h2>BBC's The Apprentice, 2015</h2>
-          <p>Joseph won the twelfth series of BBC's The Apprentice, securing a quarter-million-pound investment from Lord Sugar, the first tradesperson ever to do so.</p>
+          <h2><a href="https://en.wikipedia.org/wiki/The_Apprentice_(British_TV_series)_series_11" target="_blank" rel="noopener">BBC's The Apprentice, 2015</a></h2>
+          <p>Joseph won the eleventh series of BBC's The Apprentice, securing a quarter-million-pound investment from Lord Sugar, the first tradesperson ever to do so.</p>
         </div>
       </div>
       <div class="press-item">
-        <div class="press-tag">Recognition</div>
+        <div class="press-icon"><img src="img/logo-forbes.png" alt="Forbes 30 Under 30"></div>
         <div>
           <h2>Forbes 30 Under 30</h2>
           <p>Named to Forbes' 30 Under 30 list, recognising his work building ImpraGas into the UK's largest independent boiler installation company.</p>
         </div>
       </div>
       <div class="press-item">
-        <div class="press-tag">Recognition</div>
+        <div class="press-icon label">IoD</div>
         <div>
           <h2>IoD Director of the Year</h2>
           <p>Awarded Director of the Year by the Institute of Directors.</p>
         </div>
       </div>
       <div class="press-item">
-        <img class="press-item-thumb" src="img/podcast-tradesecrets.jpg" alt="Trade Secrets podcast cover">
+        <div class="press-icon cover"><img src="img/podcast-tradesecrets.jpg" alt="Trade Secrets podcast cover"></div>
         <div>
-          <h2>The Trade Secrets Podcast</h2>
+          <h2><a href="https://scaleup.podbean.com/" target="_blank" rel="noopener">The Trade Secrets Podcast</a></h2>
           <p>Host of The Trade Secrets Podcast, speaking directly with trade and construction business owners about what it actually takes to scale.</p>
         </div>
       </div>
       <div class="press-item">
-        <img class="press-item-thumb" src="img/podcast-unfinishedbusiness.png" alt="Unfinished Business podcast cover">
+        <div class="press-icon dark"><img src="img/podcast-unfinishedbusiness.png" alt="Unfinished Business podcast cover"></div>
         <div>
           <h2>Unfinished Business</h2>
           <p>Host of Unfinished Business, covering the realities of building and scaling companies past the point most owners get stuck.</p>
         </div>
       </div>
       <div class="press-item">
-        <div class="press-tag">Author</div>
+        <div class="press-icon label">✎</div>
         <div>
-          <h2>Best-Selling Author &amp; Keynote Speaker</h2>
-          <p>Published author and regular keynote speaker on business growth, leadership and scaling beyond the founder.</p>
+          <h2>Keynote Speaker</h2>
+          <p>Regular keynote speaker on business growth, leadership and scaling beyond the founder. See his book below.</p>
         </div>
       </div>
       <div class="press-item">
-        <div class="press-tag">Press</div>
+        <div class="press-icon label">PT</div>
+        <div>
+          <h2><a href="https://www.peterboroughtoday.co.uk/news/people/bbc-the-apprentice-winner-joseph-valente-launches-his-own-university-in-peterborough-7811375" target="_blank" rel="noopener">Peterborough Telegraph: Joseph Launches Trade Mastermind University</a></h2>
+          <p>Coverage of the launch of Trade Mastermind University, a 20,000 sq ft education hub in Peterborough built to teach tradespeople the business skills, not just the trade skills, needed to run a company. Joseph told the paper <em>"the winners won't just be the best engineers — they'll be the best business owners."</em></p>
+        </div>
+      </div>
+      <div class="press-item">
+        <div class="press-icon"><img src="img/logo-times.png" alt="The Times"></div>
         <div>
           <h2><a href="https://www.thetimes.com/money/family-finances/article/pay-parents-retirement-the-bank-for-mum-and-dad-nh0dtf58q" target="_blank" rel="noopener">The Times: The Bank for Mum and Dad</a></h2>
           <p>Joseph Valente featured in The Times on the financial pressures facing families today. <!-- TODO: replace with the actual quote/angle once confirmed --></p>
