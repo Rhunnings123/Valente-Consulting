@@ -36,6 +36,25 @@
   }
   .press-item h2{font-size:18px;margin-bottom:6px;}
   .press-item p{font-size:14.5px;color:var(--ink-soft);}
+  .press-item-thumb{width:44px;height:44px;object-fit:cover;border-radius:6px;flex-shrink:0;margin-top:2px;}
+
+  .as-seen-in{margin:0 0 56px;padding:32px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .as-seen-in-label{text-align:center;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:26px;}
+  .logo-strip{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;}
+  .logo-strip img{height:32px;width:auto;object-fit:contain;filter:grayscale(100%);opacity:0.72;transition:opacity .2s,filter .2s;}
+  .logo-strip img:hover{filter:none;opacity:1;}
+  .logo-strip img.logo-bbc{height:24px;}
+  .logo-strip img.logo-times{height:20px;}
+  .logo-strip img.logo-apprentice{height:26px;}
+
+  .book-feature{
+    display:flex;gap:40px;align-items:center;background:var(--paper-2);border:1px solid var(--line);
+    padding:36px;margin:56px 0;
+  }
+  .book-feature img{width:150px;flex-shrink:0;box-shadow:0 20px 40px -14px rgba(0,0,0,0.3);}
+  .book-feature .eyebrow{margin-bottom:6px;}
+  .book-feature h2{font-size:22px;margin-bottom:12px;line-height:1.25;}
+  .book-feature p{font-size:14.5px;color:var(--ink-soft);}
 
   .notice{
     background:var(--paper-2);border:1px solid var(--line);padding:20px 22px;
@@ -86,6 +105,8 @@
     .mobile-nav a{padding:16px 24px;font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);}
     .press-item{flex-direction:column;gap:6px;}
     .press-tag{width:auto;}
+    .logo-strip{gap:28px;}
+    .book-feature{flex-direction:column;text-align:center;padding:28px;}
   }
   @media (max-width:560px){
     header .wrap{height:72px;padding:0 22px;}
@@ -133,6 +154,16 @@
       <p>Media appearances, credentials and public recognition for Joseph Valente and Valente Consulting.</p>
     </div>
 
+    <div class="as-seen-in">
+      <p class="as-seen-in-label">Featured On</p>
+      <div class="logo-strip">
+        <img class="logo-bbc" src="img/logo-bbc.png" alt="BBC">
+        <img class="logo-apprentice" src="img/logo-apprentice.png" alt="The Apprentice">
+        <img class="logo-forbes" src="img/logo-forbes.png" alt="Forbes 30 Under 30">
+        <img class="logo-times" src="img/logo-times.png" alt="The Times">
+      </div>
+    </div>
+
     <div class="press-list">
       <div class="press-item">
         <div class="press-tag">TV</div>
@@ -156,14 +187,14 @@
         </div>
       </div>
       <div class="press-item">
-        <div class="press-tag">Podcast</div>
+        <img class="press-item-thumb" src="img/podcast-tradesecrets.jpg" alt="Trade Secrets podcast cover">
         <div>
           <h2>The Trade Secrets Podcast</h2>
           <p>Host of The Trade Secrets Podcast, speaking directly with trade and construction business owners about what it actually takes to scale.</p>
         </div>
       </div>
       <div class="press-item">
-        <div class="press-tag">Podcast</div>
+        <img class="press-item-thumb" src="img/podcast-unfinishedbusiness.png" alt="Unfinished Business podcast cover">
         <div>
           <h2>Unfinished Business</h2>
           <p>Host of Unfinished Business, covering the realities of building and scaling companies past the point most owners get stuck.</p>
@@ -176,10 +207,22 @@
           <p>Published author and regular keynote speaker on business growth, leadership and scaling beyond the founder.</p>
         </div>
       </div>
+      <div class="press-item">
+        <div class="press-tag">Press</div>
+        <div>
+          <h2><a href="https://www.thetimes.com/money/family-finances/article/pay-parents-retirement-the-bank-for-mum-and-dad-nh0dtf58q" target="_blank" rel="noopener">The Times: The Bank for Mum and Dad</a></h2>
+          <p>Joseph Valente featured in The Times on the financial pressures facing families today. <!-- TODO: replace with the actual quote/angle once confirmed --></p>
+        </div>
+      </div>
     </div>
 
-    <div class="notice">
-      This page covers Joseph's established public credentials. If there are specific articles, interviews or additional press mentions you'd like added, with links to the original source, send them over and this page can be expanded.
+    <div class="book-feature">
+      <img src="img/book-cover.jpg" alt="Expelled From The Classroom To Billionaire Boardroom, book cover">
+      <div>
+        <p class="eyebrow">Best-Selling Author</p>
+        <h2>Expelled From The Classroom To Billionaire Boardroom</h2>
+        <p>Joseph's autobiography and business book, charting the journey from being expelled at fifteen to winning BBC's The Apprentice and building multiple eight-figure businesses.</p>
+      </div>
     </div>
   </div>
 
