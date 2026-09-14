@@ -98,6 +98,70 @@
 
   footer{border-top:1px solid var(--line);padding:32px 0;text-align:center;font-size:13px;color:var(--ink-soft);}
 
+  /* ===== LEAD MODAL ===== */
+  .lead-modal-overlay{
+    display:none;position:fixed;inset:0;z-index:200;
+    background:rgba(10,9,8,0.72);
+    backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+    align-items:center;justify-content:center;
+    padding:24px;
+  }
+  .lead-modal-overlay.open{display:flex;}
+  .lead-modal{
+    position:relative;background:var(--paper);
+    max-width:460px;width:100%;max-height:88vh;overflow-y:auto;
+    border:1px solid rgba(238,194,60,0.4);
+    box-shadow:0 40px 80px -20px rgba(0,0,0,0.5);
+    padding:44px 36px;
+    animation:leadModalIn .35s cubic-bezier(.16,1,.3,1) both;
+  }
+  @keyframes leadModalIn{from{opacity:0;transform:translateY(18px) scale(.98);}to{opacity:1;transform:translateY(0) scale(1);}}
+  .lead-modal-close{
+    position:absolute;top:16px;right:16px;
+    width:34px;height:34px;border-radius:50%;
+    background:none;border:1px solid var(--line);
+    font-size:20px;line-height:1;color:var(--ink-soft);cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .lead-modal-close:hover{background:var(--paper-2);}
+  .lead-modal h3{font-size:clamp(24px,3vw,30px);margin-top:14px;}
+  .lead-modal-sub{margin-top:12px;font-size:14px;color:var(--ink-soft);}
+  #leadForm{margin-top:26px;display:flex;flex-direction:column;gap:16px;}
+  .lead-field{display:flex;flex-direction:column;gap:6px;}
+  .lead-field label{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--ink-soft);}
+  .lead-field input, .lead-field select{
+    font-family:'Inter',sans-serif;font-size:14.5px;color:var(--ink);
+    padding:13px 14px;border:1px solid var(--line);background:#fff;
+    border-radius:4px;
+  }
+  .lead-field input:focus, .lead-field select:focus{outline:none;border-color:var(--gold);}
+  .lead-consent{
+    display:flex;align-items:flex-start;gap:10px;font-size:12.5px;color:var(--ink-soft);
+    line-height:1.5;cursor:pointer;
+  }
+  .lead-consent input{margin-top:2px;flex-shrink:0;width:15px;height:15px;accent-color:var(--gold);}
+  .lead-consent a{color:var(--gold-deep);text-decoration:underline;}
+  .lead-submit{width:100%;justify-content:center;margin-top:6px;}
+  .lead-form-error{
+    display:none;background:rgba(217,90,60,0.1);border:1px solid rgba(217,90,60,0.3);
+    color:#c14a2f;font-size:13px;padding:10px 14px;border-radius:4px;margin-top:-6px;
+  }
+  .lead-privacy{margin-top:2px;font-size:11.5px;color:var(--ink-soft);text-align:center;}
+  .lead-modal-success{display:none;text-align:center;padding:20px 0;}
+  .lead-modal-success.show{display:block;}
+  .lead-success-mark{
+    width:56px;height:56px;border-radius:50%;background:var(--gold);color:var(--ink);
+    display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;
+    margin:0 auto 20px;
+  }
+  .lead-modal-success h3{margin-top:0;}
+  .lead-modal-success p{margin-top:12px;font-size:14.5px;color:var(--ink-soft);}
+  .lead-modal-success .btn{margin-top:22px;}
+  body.modal-open{overflow:hidden;}
+  @media(max-width:560px){
+    .lead-modal{padding:32px 24px;}
+  }
+
   header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);}
   header .wrap{display:flex;align-items:center;justify-content:space-between;height:148px;max-width:1400px;}
   .brand img{height:120px;width:auto;}
@@ -155,7 +219,7 @@
       <a href="contact.html">Contact Us</a>
     </nav>
     <div class="header-cta">
-      <a href="index.html#reserve" class="btn-primary"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg> <span class="btn-label">I'm Ready to Scale</span></a>
+      <a href="#reserve" class="btn-primary"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg> <span class="btn-label">I'm Ready to Scale</span></a>
       <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
@@ -308,7 +372,7 @@
       <div class="cta-band-inner">
         <h2>Want the Same Blueprint?</h2>
         <p>Everything Joseph learned building multiple eight-figure businesses, now available in a single day.</p>
-        <a class="btn" href="index.html#reserve">Start Your Application</a>
+        <a class="btn" href="#reserve">Start Your Application</a>
       </div>
     </div>
   </div>
@@ -317,6 +381,60 @@
 <footer>
   &copy; <span id="year"></span> Valente Consulting. All rights reserved. &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="terms-conditions.html">Terms &amp; Conditions</a> &middot; <a href="index.html#events">VC Events</a> &middot; <a href="index.html#boardroom">Boardroom</a> &middot; <a href="press.html">Press &amp; Media</a>
 </footer>
+
+<div class="lead-modal-overlay" id="leadModalOverlay">
+  <div class="lead-modal" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
+    <button class="lead-modal-close" id="leadModalClose" aria-label="Close">&times;</button>
+
+    <div class="lead-modal-body" id="leadModalForm">
+      <p class="eyebrow">Apply Now</p>
+      <h3 id="leadModalTitle">Start Your Application</h3>
+      <p class="lead-modal-sub">Tell us a little about your business and we'll be in touch to confirm your place.</p>
+
+      <form id="leadForm">
+        <input type="hidden" name="_subject" value="New Workshop Application — Valente Consulting">
+        <div class="lead-field">
+          <label for="leadName">Full Name</label>
+          <input type="text" id="leadName" name="name" required autocomplete="name">
+        </div>
+        <div class="lead-field">
+          <label for="leadEmail">Email Address</label>
+          <input type="email" id="leadEmail" name="email" required autocomplete="email">
+        </div>
+        <div class="lead-field">
+          <label for="leadPhone">Phone Number</label>
+          <input type="tel" id="leadPhone" name="phone" required autocomplete="tel">
+        </div>
+        <div class="lead-field">
+          <label for="leadTurnover">Current Annual Turnover</label>
+          <select id="leadTurnover" name="turnover" required>
+            <option value="" disabled selected>Select your turnover</option>
+            <option>Below £100k</option>
+            <option>£100k – £250k</option>
+            <option>£250k – £500k</option>
+            <option>£500k – £1M</option>
+            <option>£1M – £3M</option>
+            <option>Over £3M</option>
+          </select>
+        </div>
+        <label class="lead-consent">
+          <input type="checkbox" name="consent" required checked>
+          <span>I agree to be contacted about this workshop and have read the <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.</span>
+        </label>
+        <button type="submit" class="btn btn-primary lead-submit">Submit Application</button>
+        <p class="lead-form-error" id="leadFormError" role="alert"></p>
+        <p class="lead-privacy">Your details are safe with us. No spam, ever.</p>
+      </form>
+    </div>
+
+    <div class="lead-modal-success" id="leadModalSuccess">
+      <div class="lead-success-mark">&#10003;</div>
+      <h3>Application Received</h3>
+      <p>Thanks for applying. A member of the team will be in touch within 24 hours to confirm your place.</p>
+      <button type="button" class="btn btn-line" id="leadModalDone">Close</button>
+    </div>
+  </div>
+</div>
 
 <script>
   (function(){
@@ -333,6 +451,92 @@
         btn.setAttribute('aria-expanded', 'false');
       });
     });
+  })();
+</script>
+<script>
+  // Lead capture modal
+  (function(){
+    const overlay = document.getElementById('leadModalOverlay');
+    const closeBtn = document.getElementById('leadModalClose');
+    const doneBtn = document.getElementById('leadModalDone');
+    const form = document.getElementById('leadForm');
+    const formWrap = document.getElementById('leadModalForm');
+    const successWrap = document.getElementById('leadModalSuccess');
+    if(!overlay) return;
+
+    function openModal(){
+      overlay.classList.add('open');
+      document.body.classList.add('modal-open');
+      formWrap.style.display = 'block';
+      successWrap.classList.remove('show');
+      if(form) form.reset();
+      const errorMsg = document.getElementById('leadFormError');
+      if(errorMsg) errorMsg.style.display = 'none';
+    }
+    function closeModal(){
+      overlay.classList.remove('open');
+      document.body.classList.remove('modal-open');
+    }
+
+    // Every Reserve button on this page opens the modal instead of scrolling
+    document.querySelectorAll('a[href="#reserve"]').forEach(link=>{
+      link.addEventListener('click', (e)=>{
+        e.preventDefault();
+        openModal();
+      });
+    });
+
+    // Arriving with #reserve already in the URL should open the modal too
+    if(window.location.hash === '#reserve'){
+      openModal();
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    doneBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', (e)=>{
+      if(e.target === overlay) closeModal();
+    });
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+    });
+
+    if(form){
+      const submitBtn = form.querySelector('.lead-submit');
+      const errorMsg = document.getElementById('leadFormError');
+
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        if(errorMsg) errorMsg.style.display = 'none';
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+
+        fetch('https://formspree.io/f/xbgrokjg', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(response => {
+          if(response.ok){
+            formWrap.style.display = 'none';
+            successWrap.classList.add('show');
+          } else {
+            response.json().then(data => {
+              if(errorMsg){
+                errorMsg.textContent = (data.errors && data.errors.map(e=>e.message).join(', ')) || 'Something went wrong. Please try again or email us directly.';
+                errorMsg.style.display = 'block';
+              }
+            });
+          }
+        }).catch(() => {
+          if(errorMsg){
+            errorMsg.textContent = 'Something went wrong. Please check your connection and try again.';
+            errorMsg.style.display = 'block';
+          }
+        }).finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit Application';
+        });
+      });
+    }
   })();
 </script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
