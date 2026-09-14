@@ -1462,6 +1462,12 @@
       });
     });
 
+    // Arriving from another page (e.g. about.html#reserve) should open the
+    // modal too, not just scroll to the section above the footer
+    if(window.location.hash === '#reserve'){
+      openModal();
+    }
+
     closeBtn.addEventListener('click', closeModal);
     doneBtn.addEventListener('click', closeModal);
     overlay.addEventListener('click', (e)=>{
