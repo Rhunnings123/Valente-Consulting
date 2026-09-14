@@ -386,6 +386,32 @@
   /* ===== JOURNEY ===== */
   .section-tint{background:var(--paper-2);}
   .section-gold{background:linear-gradient(180deg, rgba(238,194,60,0.09), rgba(238,194,60,0.02) 40%);}
+
+  /* ===== BOARDROOM SECTION ===== */
+  #boardroom .board-features{display:flex;justify-content:center;flex-wrap:wrap;max-width:900px;margin:48px auto 0;border-top:1px solid var(--line-on-dark);padding-top:40px;}
+  #boardroom .board-feature{flex:1 1 150px;display:flex;flex-direction:column;align-items:center;gap:12px;padding:0 18px;text-align:center;}
+  #boardroom .bf-icon{width:44px;height:44px;border-radius:50%;background:rgba(238,194,60,0.08);border:1px solid var(--brass-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0;}
+  #boardroom .board-feature span{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:rgba(247,244,236,0.8);line-height:1.4;}
+
+  #boardroom .board-cols{display:grid;grid-template-columns:1fr 1fr;gap:56px;max-width:900px;margin:56px auto 0;}
+  #boardroom .board-col .eyebrow{color:var(--brass-light);}
+  #boardroom .board-col .eyebrow::before{background:var(--brass-light);}
+  #boardroom .board-col h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:0.02em;color:var(--paper);font-size:18px;margin-top:12px;}
+  #boardroom .board-list{margin-top:18px;border-top:1px solid var(--line-on-dark);}
+  #boardroom .board-list-item{display:flex;gap:10px;padding:13px 0;border-bottom:1px solid var(--line-on-dark);font-size:14px;color:rgba(247,244,236,0.85);}
+  #boardroom .board-list-item .mark{color:var(--brass);font-weight:700;flex-shrink:0;}
+
+  #boardroom .board-chips{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;max-width:900px;margin:56px auto 0;}
+  #boardroom .board-chip{display:flex;align-items:center;gap:14px;border:1px solid var(--line-on-dark);padding:18px 22px;flex:1 1 240px;}
+  #boardroom .chip-icon{width:38px;height:38px;border-radius:50%;background:rgba(238,194,60,0.08);border:1px solid var(--brass-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0;}
+  #boardroom .board-chip span{font-size:13px;font-weight:600;color:rgba(247,244,236,0.85);line-height:1.4;}
+
+  #boardroom .board-tagline{text-align:center;margin-top:48px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--brass-light);}
+
+  @media(max-width:760px){
+    #boardroom .board-cols{grid-template-columns:1fr;gap:40px;}
+    #boardroom .board-feature{flex:1 1 45%;}
+  }
   .journey{background:var(--ink);color:var(--paper);}
   .journey .eyebrow{color:var(--brass);}
   .journey .section-head h2{color:var(--paper);text-shadow:0 0 1px rgba(247,244,236,0.5);}
@@ -1238,17 +1264,73 @@
     <div class="section-head reveal" style="text-align:center;margin-left:auto;margin-right:auto;">
       <p class="eyebrow light" style="justify-content:center;">For Larger Businesses</p>
       <h2 style="color:var(--paper);text-shadow:0 0 1px rgba(247,244,236,0.5);">Already Doing £750k+?<br><em>There's a Level Above This.</em></h2>
-      <p style="max-width:620px;margin:16px auto 0;color:rgba(247,244,236,0.65);">The CEO Seven-Figure Boardroom is a private strategic programme for ambitious business owners doing £750,000+ a year who are serious about scaling to seven figures and beyond. A smaller, more exclusive room than the workshop, built for a different stage of business.</p>
+      <p style="max-width:620px;margin:16px auto 0;color:rgba(247,244,236,0.65);">The 7-Figure Business Boardroom is a private strategic programme for ambitious business owners doing £750,000+ a year who are serious about scaling to seven figures and beyond. A smaller, more exclusive room than the workshop, built for a different stage of business — your personal board of directors for scaling a multi-million-pound business.</p>
     </div>
 
-    <div class="mission-list" style="max-width:640px;margin:40px auto 0;border-top:1px solid var(--line-on-dark);">
-      <div class="mission-item reveal"><span class="mark">✓</span> Seven-figure growth strategies, proven at that stage of business</div>
-      <div class="mission-item reveal"><span class="mark">✓</span> A powerful network and peer mastermind of high-performing CEOs</div>
-      <div class="mission-item reveal"><span class="mark">✓</span> Operational excellence and systems built for real scale</div>
-      <div class="mission-item reveal"><span class="mark">✓</span> Clarity, freedom and a lasting impact beyond the business</div>
+    <div class="board-features">
+      <div class="board-feature reveal">
+        <span class="bf-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9" cy="8" r="3.2"/><path d="M2 21c0-4.2 3.1-6.6 7-6.6s7 2.4 7 6.6"/><circle cx="18" cy="9" r="2.6"/><path d="M16 21c.3-3.1 2.1-4.8 5-5"/></svg></span>
+        <span>High-Level Masterminding</span>
+      </div>
+      <div class="board-feature reveal">
+        <span class="bf-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 8l4 3 5-7 5 7 4-3-2 11H5L3 8z"/></svg></span>
+        <span>Boardroom Strategy</span>
+      </div>
+      <div class="board-feature reveal">
+        <span class="bf-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 20V13M10 20V7M16 20v-9M22 20v-4"/></svg></span>
+        <span>Financial Clarity</span>
+      </div>
+      <div class="board-feature reveal">
+        <span class="bf-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/></svg></span>
+        <span>Action &amp; Accountability</span>
+      </div>
+      <div class="board-feature reveal">
+        <span class="bf-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2l7 3v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V5l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <span>Scale With Confidence</span>
+      </div>
     </div>
 
-    <div style="text-align:center;margin-top:40px;">
+    <div class="board-cols">
+      <div class="board-col">
+        <p class="eyebrow">What's Included</p>
+        <h3>Every Boardroom Membership</h3>
+        <div class="board-list">
+          <div class="board-list-item reveal"><span class="mark">✓</span> Monthly boardroom sessions with Joseph and the room</div>
+          <div class="board-list-item reveal"><span class="mark">✓</span> JV and CFO intensives on your numbers</div>
+          <div class="board-list-item reveal"><span class="mark">✓</span> Strategic planning and financial review</div>
+          <div class="board-list-item reveal"><span class="mark">✓</span> Private networking and accountability with peers at your stage</div>
+          <div class="board-list-item reveal"><span class="mark">✓</span> Bottleneck analysis, actions and masterminding</div>
+        </div>
+      </div>
+      <div class="board-col">
+        <p class="eyebrow">What Happens Each Month</p>
+        <h3>Inside The Room</h3>
+        <div class="board-list">
+          <div class="board-list-item reveal"><span class="mark">✓</span> Review wins, numbers and margins</div>
+          <div class="board-list-item reveal"><span class="mark">✓</span> Identify key business challenges</div>
+          <div class="board-list-item reveal"><span class="mark">✓</span> Set actions and priorities</div>
+          <div class="board-list-item reveal"><span class="mark">✓</span> Solve problems with the room</div>
+          <div class="board-list-item reveal"><span class="mark">✓</span> Scale with structure and accountability</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="board-chips">
+      <div class="board-chip reveal">
+        <span class="chip-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9" cy="7" r="3.2"/><path d="M2 20c0-3.9 3-6.1 7-6.1s7 2.2 7 6.1"/><circle cx="17" cy="8" r="2.6"/><path d="M15 20c.3-2.8 2-4.4 5-4.7"/></svg></span>
+        <span>Capped at 20 businesses, so every member gets time in the room</span>
+      </div>
+      <div class="board-chip reveal">
+        <span class="chip-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
+        <span>Hosted at Trade Mastermind HQ</span>
+      </div>
+      <div class="board-chip reveal">
+        <span class="chip-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.8l-6.2 3.5 1.6-6.8L2.2 8.9l6.9-.6z"/></svg></span>
+        <span>Limited boardroom placements available per intake</span>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:44px;">
       <a href="https://www.7figurebusinessboardroom.co.uk" target="_blank" rel="noopener" class="btn btn-primary" style="display:inline-flex;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg> Explore The Seven-Figure Boardroom</a>
     </div>
   </div>
@@ -1543,7 +1625,7 @@
 
   // Stagger delay indices within each repeating group, for a cascading reveal
   (function(){
-    const groups = ['.pillars', '.mission-list', '.leave-with', '.growth-steps', '.journey-track', '.story-cards', '.faq-list', '.stats .wrap', '.compare-today ul', '.compare-instead ul'];
+    const groups = ['.pillars', '.mission-list', '.leave-with', '.growth-steps', '.journey-track', '.story-cards', '.faq-list', '.stats .wrap', '.compare-today ul', '.compare-instead ul', '.board-features', '.board-list', '.board-chips'];
     groups.forEach(sel=>{
       document.querySelectorAll(sel).forEach(group=>{
         Array.from(group.children).forEach((child,i)=>{
