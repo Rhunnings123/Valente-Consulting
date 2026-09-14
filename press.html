@@ -124,6 +124,14 @@
     .brand img{height:44px;}
     .cta-band{padding:32px 24px;}
   }
+
+  /* ===== SCROLL REVEAL ===== */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1);}
+  .reveal.in-view{opacity:1;transform:none;}
+  .stagger > .reveal{transition-delay:calc(var(--i, 0) * 70ms);}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
 </style>
 </head>
 <body>
@@ -161,10 +169,10 @@
     <div class="page-head">
       <p class="eyebrow" style="justify-content:center;">Press &amp; Media</p>
       <h1>As Seen In</h1>
-      <p>Media appearances, credentials and public recognition for Joseph Valente and Valente Consulting.</p>
+      <p class="reveal">Media appearances, credentials and public recognition for Joseph Valente and Valente Consulting.</p>
     </div>
 
-    <div class="as-seen-in">
+    <div class="as-seen-in reveal">
       <p class="as-seen-in-label">Featured On</p>
       <div class="logo-strip">
         <img class="logo-bbc" src="img/logo-bbc.png" alt="BBC">
@@ -174,57 +182,57 @@
       </div>
     </div>
 
-    <div class="press-list">
-      <div class="press-item">
+    <div class="press-list stagger">
+      <div class="press-item reveal">
         <div class="press-icon"><img src="img/logo-bbc.png" alt="BBC"></div>
         <div>
           <h2><a href="https://en.wikipedia.org/wiki/The_Apprentice_(British_TV_series)_series_11" target="_blank" rel="noopener">BBC's The Apprentice, 2015</a></h2>
           <p>Joseph won the eleventh series of BBC's The Apprentice, securing a quarter-million-pound investment from Lord Sugar, the first tradesperson ever to do so.</p>
         </div>
       </div>
-      <div class="press-item">
+      <div class="press-item reveal">
         <div class="press-icon"><img src="img/logo-forbes.png" alt="Forbes 30 Under 30"></div>
         <div>
           <h2>Forbes 30 Under 30</h2>
           <p>Named to Forbes' 30 Under 30 list, recognising his work building ImpraGas into the UK's largest independent boiler installation company.</p>
         </div>
       </div>
-      <div class="press-item">
+      <div class="press-item reveal">
         <div class="press-icon label">IoD</div>
         <div>
           <h2>IoD Director of the Year</h2>
           <p>Awarded Director of the Year by the Institute of Directors.</p>
         </div>
       </div>
-      <div class="press-item">
+      <div class="press-item reveal">
         <div class="press-icon cover"><img src="img/podcast-tradesecrets.jpg" alt="Trade Secrets podcast cover"></div>
         <div>
           <h2><a href="https://scaleup.podbean.com/" target="_blank" rel="noopener">The Trade Secrets Podcast</a></h2>
           <p>Host of The Trade Secrets Podcast, speaking directly with trade and construction business owners about what it actually takes to scale.</p>
         </div>
       </div>
-      <div class="press-item">
+      <div class="press-item reveal">
         <div class="press-icon dark"><img src="img/podcast-unfinishedbusiness.png" alt="Unfinished Business podcast cover"></div>
         <div>
           <h2>Unfinished Business</h2>
           <p>Host of Unfinished Business, covering the realities of building and scaling companies past the point most owners get stuck.</p>
         </div>
       </div>
-      <div class="press-item">
+      <div class="press-item reveal">
         <div class="press-icon label">✎</div>
         <div>
           <h2>Keynote Speaker</h2>
           <p>Regular keynote speaker on business growth, leadership and scaling beyond the founder. See his book below.</p>
         </div>
       </div>
-      <div class="press-item">
+      <div class="press-item reveal">
         <div class="press-icon label">PT</div>
         <div>
           <h2><a href="https://www.peterboroughtoday.co.uk/news/people/bbc-the-apprentice-winner-joseph-valente-launches-his-own-university-in-peterborough-7811375" target="_blank" rel="noopener">Peterborough Telegraph: Joseph Launches Trade Mastermind University</a></h2>
           <p>Coverage of the launch of Trade Mastermind University, a 20,000 sq ft education hub in Peterborough built to teach tradespeople the business skills, not just the trade skills, needed to run a company. Joseph told the paper <em>"the winners won't just be the best engineers — they'll be the best business owners."</em></p>
         </div>
       </div>
-      <div class="press-item">
+      <div class="press-item reveal">
         <div class="press-icon"><img src="img/logo-times.png" alt="The Times"></div>
         <div>
           <h2><a href="https://www.thetimes.com/money/family-finances/article/pay-parents-retirement-the-bank-for-mum-and-dad-nh0dtf58q" target="_blank" rel="noopener">The Times: The Bank for Mum and Dad</a></h2>
@@ -233,7 +241,7 @@
       </div>
     </div>
 
-    <div class="book-feature">
+    <div class="book-feature reveal">
       <img src="img/book-cover.jpg" alt="Expelled From The Classroom To Billionaire Boardroom, book cover">
       <div>
         <p class="eyebrow">Best-Selling Author</p>
@@ -244,7 +252,7 @@
   </div>
 
   <div class="wrap">
-    <div class="cta-band">
+    <div class="cta-band reveal">
       <h2>See What the Blueprint Can Do For You</h2>
       <p>The same thinking behind these credentials is what we teach in the workshop.</p>
       <a class="btn" href="index.html#reserve">Start Your Application</a>
@@ -274,6 +282,29 @@
   })();
 </script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+<script>
+  // Scroll reveal
+  (function(){
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('.stagger').forEach(group=>{
+      Array.from(group.children).forEach((child,i)=>child.style.setProperty('--i', i));
+    });
+    if(prefersReduced || !('IntersectionObserver' in window)){
+      document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in-view'));
+      return;
+    }
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.15, rootMargin:'0px 0px -60px 0px'});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  })();
+</script>
 
 </body>
 </html>

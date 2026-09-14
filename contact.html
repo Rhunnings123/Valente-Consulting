@@ -118,6 +118,14 @@
     .contact-details{padding:28px 22px;}
     .cta-band{padding:32px 24px;}
   }
+
+  /* ===== SCROLL REVEAL ===== */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1);}
+  .reveal.in-view{opacity:1;transform:none;}
+  .stagger > .reveal{transition-delay:calc(var(--i, 0) * 70ms);}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
 </style>
 </head>
 <body>
@@ -157,11 +165,11 @@
     <div class="page-head">
       <p class="eyebrow" style="justify-content:center;">Get In Touch</p>
       <h1>Contact Us</h1>
-      <p>Have a question before you apply, or need to reach us directly? Here's every way to find us.</p>
+      <p class="reveal">Have a question before you apply, or need to reach us directly? Here's every way to find us.</p>
     </div>
 
     <div class="contact-grid">
-      <div class="contact-details">
+      <div class="contact-details reveal">
         <div class="contact-item">
           <h3>Email</h3>
           <p><a href="mailto:customerservice@trademastermind.co.uk">customerservice@trademastermind.co.uk</a></p>
@@ -180,7 +188,7 @@
         </div>
       </div>
 
-      <div class="map-wrap">
+      <div class="map-wrap reveal">
         <iframe
           src="https://maps.google.com/maps?q=Trade+Mastermind,+Peterborough&z=16&output=embed"
           allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
@@ -189,7 +197,7 @@
       </div>
     </div>
 
-    <div class="cta-band">
+    <div class="cta-band reveal">
       <h2>Ready to Talk Business?</h2>
       <p>If you'd rather skip straight to it, start your application and we'll be in touch directly.</p>
       <a class="btn" href="index.html#reserve">Start Your Application</a>
@@ -219,6 +227,29 @@
   })();
 </script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+<script>
+  // Scroll reveal
+  (function(){
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('.stagger').forEach(group=>{
+      Array.from(group.children).forEach((child,i)=>child.style.setProperty('--i', i));
+    });
+    if(prefersReduced || !('IntersectionObserver' in window)){
+      document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in-view'));
+      return;
+    }
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.15, rootMargin:'0px 0px -60px 0px'});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  })();
+</script>
 
 </body>
 </html>

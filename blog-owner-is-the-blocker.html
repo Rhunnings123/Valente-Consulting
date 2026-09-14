@@ -135,6 +135,14 @@
     .mobile-nav{top:72px;}
     .brand img{height:44px;}
   }
+
+  /* ===== SCROLL REVEAL ===== */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1);}
+  .reveal.in-view{opacity:1;transform:none;}
+  .stagger > .reveal{transition-delay:calc(var(--i, 0) * 70ms);}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
 </style>
 </head>
 <body>
@@ -172,8 +180,8 @@
 <article>
   <div class="wrap">
     <p class="post-tag">Leadership</p>
-    <h1 class="title">The Owner Is Usually the Biggest Blocker in the Business</h1>
-    <p class="byline">By Callum McAuley</p>
+    <h1 class="title reveal">The Owner Is Usually the Biggest Blocker in the Business</h1>
+    <p class="byline reveal">By Callum McAuley</p>
 
     <div class="post-body">
       <p>It is one of the hardest things to say to someone who has built something from nothing.</p>
@@ -219,7 +227,7 @@
       <p>If that is the conversation you are ready to have, speak to one of the team at Valente Consulting.</p>
     </div>
 
-    <div class="post-cta">
+    <div class="post-cta reveal">
       <h3>Find Out If You're the Ceiling</h3>
       <p>At Valente Consulting, that is the conversation we have with owners every week. Speak to one of the team if that would be useful to have with someone outside the business.</p>
       <a class="btn" href="index.html#reserve">Start Your Application</a>
@@ -251,6 +259,29 @@
   })();
 </script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+<script>
+  // Scroll reveal
+  (function(){
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('.stagger').forEach(group=>{
+      Array.from(group.children).forEach((child,i)=>child.style.setProperty('--i', i));
+    });
+    if(prefersReduced || !('IntersectionObserver' in window)){
+      document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in-view'));
+      return;
+    }
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.15, rootMargin:'0px 0px -60px 0px'});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  })();
+</script>
 
 </body>
 </html>
