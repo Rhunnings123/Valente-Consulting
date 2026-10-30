@@ -1406,40 +1406,10 @@
       <h3 id="leadModalTitle">Start Your Application</h3>
       <p class="lead-modal-sub">Tell us a little about your business and we'll be in touch to confirm your place.</p>
 
-      <form id="leadForm">
-        <input type="hidden" name="_subject" value="New Workshop Application — Valente Consulting">
-        <div class="lead-field">
-          <label for="leadName">Full Name</label>
-          <input type="text" id="leadName" name="name" required autocomplete="name">
-        </div>
-        <div class="lead-field">
-          <label for="leadEmail">Email Address</label>
-          <input type="email" id="leadEmail" name="email" required autocomplete="email">
-        </div>
-        <div class="lead-field">
-          <label for="leadPhone">Phone Number</label>
-          <input type="tel" id="leadPhone" name="phone" required autocomplete="tel">
-        </div>
-        <div class="lead-field">
-          <label for="leadTurnover">Current Annual Turnover</label>
-          <select id="leadTurnover" name="turnover" required>
-            <option value="" disabled selected>Select your turnover</option>
-            <option>Below £100k</option>
-            <option>£100k – £250k</option>
-            <option>£250k – £500k</option>
-            <option>£500k – £1M</option>
-            <option>£1M – £3M</option>
-            <option>Over £3M</option>
-          </select>
-        </div>
-        <label class="lead-consent">
-          <input type="checkbox" name="consent" required checked>
-          <span>I agree to be contacted about this workshop and have read the <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.</span>
-        </label>
-        <button type="submit" class="btn btn-primary lead-submit">Submit Application</button>
-        <p class="lead-form-error" id="leadFormError" role="alert"></p>
-        <p class="lead-privacy">Your details are safe with us. No spam, ever.</p>
-      </form>
+      
+<script src="https://js-eu1.hsforms.net/forms/embed/148515596.js" defer></script>
+<div class="hs-form-frame" data-region="eu1" data-form-id="a93f760a-2d3b-41e3-9410-7f2a8351daaa" data-portal-id="148515596"></div>
+
     </div>
 
     <div class="lead-modal-success" id="leadModalSuccess">
@@ -1563,43 +1533,7 @@
       if(e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
     });
 
-    if(form){
-      const submitBtn = form.querySelector('.lead-submit');
-      const errorMsg = document.getElementById('leadFormError');
-
-      form.addEventListener('submit', (e)=>{
-        e.preventDefault();
-        if(errorMsg) errorMsg.style.display = 'none';
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending…';
-
-        fetch('https://formspree.io/f/xbgrokjg', {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        }).then(response => {
-          if(response.ok){
-            formWrap.style.display = 'none';
-            successWrap.classList.add('show');
-          } else {
-            response.json().then(data => {
-              if(errorMsg){
-                errorMsg.textContent = (data.errors && data.errors.map(e=>e.message).join(', ')) || 'Something went wrong. Please try again or email us directly.';
-                errorMsg.style.display = 'block';
-              }
-            });
-          }
-        }).catch(() => {
-          if(errorMsg){
-            errorMsg.textContent = 'Something went wrong. Please check your connection and try again.';
-            errorMsg.style.display = 'block';
-          }
-        }).finally(() => {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Submit Application';
-        });
-      });
-    }
+  
   })();
 
   document.querySelectorAll('.faq-item').forEach(item=>{
